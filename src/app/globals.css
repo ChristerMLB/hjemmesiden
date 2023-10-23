@@ -25,3 +25,36 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* forsiden med alle parallaxgreiene */
+
+#scene {
+  background-image: url(../../public/img/taageskog.jpg);
+  background-size: cover;
+}
+.parallaxBackgroundParticles {
+  background-image: url(../../public/img/Particles-Transparent-File.png);
+  background-size: cover;
+  margin-left: -5vw;
+  margin-top: -5vh;
+  width: 120vw;
+  height: 110vh;
+}
+.parallaxMeg {
+  background-image: url(../../public/img/placeholderChrister.png);
+  height: 110vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
+.parallaxForgrunn2 {
+  background-image: url(../../public/img/snow.png);
+  background-size: cover;
+  margin-left: -10%;
+  margin-top: -10%;
+  width: 120%;
+  height: 130%;
+  background-blend-mode: screen;
+  opacity: 0.2;
+}
