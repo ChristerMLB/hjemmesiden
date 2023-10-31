@@ -58,6 +58,7 @@ body {
   height: 130%;
   background-blend-mode: screen;
   opacity: 0.2;
+  padding-left: 20%;
 }
 .parallaxGooglyEyes {
   width: 100%;
