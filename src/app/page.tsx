@@ -39,7 +39,14 @@ export default function Home() {
       </div>
       <div className='parallaxForgrunn1 overflow-hidden' data-depth='0.4'></div>
       <div className='parallaxForgrunn2 overflow-hidden' data-depth='0.6'>
-        <button type="button" className="parallaxFrontPageLink">frontendutvikling</button>
+        <div className='parallaxFrontPageLinks'>
+          <button type='button' className='parallaxFrontPageLink'>
+            barnehagegreier
+          </button>
+          <button type='button' className='parallaxFrontPageLink'>
+            webutvikling
+          </button>
+        </div>
       </div>
     </div>
   );
