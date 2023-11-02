@@ -1,3 +1,4 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -7,7 +8,9 @@ export const MainNav = ({}: Props) => {
   return (
     <header id='header'>
       <nav id='mainNav'>
+        <div className='makeSpaceForLogo'></div>
         <ul>
+          ☙
           <li>
             <a href='#'>barnehagegreier</a>
           </li>
@@ -15,7 +18,9 @@ export const MainNav = ({}: Props) => {
           <li>
             <a href='#'>webutvikling</a>
           </li>
-          <li>•</li>
+          <li>❧</li>
+        </ul>
+        <ul>
           <li>
             <a href='email:fra-hjemmesiden@fortelle.no' className='kontaktLink'>
               <FontAwesomeIcon icon={faEnvelope} />

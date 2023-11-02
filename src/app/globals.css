@@ -11,39 +11,51 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
+a:hover {
+  cursor: pointer;
+}
 
 #header {
   background-color: transparent;
   z-index: 9999;
+  position: absolute;
+  width: 100%;
 }
 #mainNav {
   background-color: black;
-  height: 42px;
+  margin-top: 124px;
+  height: 18px;
   display: flex;
-  place-content: flex-end;
-  place-items: flex-end;
-  padding: 0 0.5em;
+  color: #3791ba;
+  gap: 1em;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  padding: 0 1em;
 }
 #mainNav ul {
   display: flex;
   gap: 0.8em;
-  color: white;
-  font-size: 0.8rem;
 }
-#mainNav ul li a {
-  padding-top: 20px;
+#mainNav ul li a,
+#mainNav div a {
+  color: white;
+  padding: 20px 0;
 }
 #mainNav ul li a:hover {
   color: orangered !important;
 }
-#mainNav ul li a svg {
+#mainNav svg {
   margin-bottom: -0.5px;
+}
+.makeSpaceForLogo {
+  width: 95px;
+  height: 10px;
 }
 #logoen {
   background-color: transparent;
   position: absolute;
   z-index: 99999;
-  top: 0px;
+  top: 100px;
   margin-top: -15px;
   width: 95px;
   height: 87px;
