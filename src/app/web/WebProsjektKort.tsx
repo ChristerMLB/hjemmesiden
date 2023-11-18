@@ -2,13 +2,13 @@
 import { WebProject } from "@/types/Web"
 
 type WebProjectKortProps = {
-    prosjekt: WebProject | null,
+    prosjekt: WebProject,
   }
   const WebProsjektKort = ({prosjekt}: WebProjectKortProps) => {
     return (
       <div className="webProsjekt">
 
-        {prosjekt?.index % 2 ?
+        {prosjekt.index % 2 ?
 
           <>
         <div className="prosjektImg">
