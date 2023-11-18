@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --gap: .6em;
+  --black: #091317;
+  --shadowOnTransparent: #09131788;
+  --shadowOnWhite: #e4ebee;
+}
+
 *,
 *::after,
 *::before {
@@ -10,15 +17,120 @@
 
 html {
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url(../../public/img/taageskog.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 1.1em;
+}
+h1{
+  font-size: 2rem;
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
 }
 a:hover {
   cursor: pointer;
 }
+.wrapper {
+  margin: 0 auto;
+  max-width: 80em;
+  display: grid;
+}
+
+/* Prosjektliste */
+.prosjektListeWrapper {
+  display: grid;
+  margin-top: 200px;
+  gap: var(--gap);
+}
+
+.introBoks{
+  margin: 0 var(--gap);
+  color: white;
+}
+
+.webProsjekt {
+  display: grid;
+  margin: var(--gap);
+}
+.prosjektBeskrivelseWrapper {
+  display: grid;
+  grid-template-rows: 2em auto;
+  margin: 0 var(--gap);
+  background-color: white;
+  border-radius: 0 0 var(--gap) var(--gap);
+}
+.prosjektBeskrivelse{
+  margin: var(--gap);
+}
+.prosjektImg{
+  max-height: 20em;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--gap);
+}
+.spacer{
+  height: 2em;
+  background: linear-gradient(180deg, var(--shadowOnWhite), white);
+}
+
+@media (min-width:600px){
+
+  :root {
+    --gap: 1em;
+  }
+
+  .introBoks{
+    margin: calc(var(--gap) * 5) 0 calc(var(--gap) * 10) 0;
+  }
+
+  .webProsjekt{
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    place-items: center start;
+    margin-top: calc(0em - (var(--gap) * 3));
+  }
+  .spacer{
+    height: 100%;
+    width: 2em;
+    background: linear-gradient(to right, var(--shadowOnWhite), white);
+  }
+  .spacerH {
+    background: linear-gradient(to left, var(--shadowOnWhite), white);
+    place-self: end;
+  }
+  .prosjektBeskrivelseWrapper {
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 1fr;
+    margin: var(--gap) 0;
+    min-width: 20em;
+    max-width: 40em;
+    margin-left: calc(0em - (var(--gap) * 2));
+    border-radius: 0 var(--gap) var(--gap) 0;
+  }
+  .prosjektBeskrivelseWrapperH{
+    place-self: center end;
+    margin-right: calc(0em - (var(--gap) * 2));
+    border-radius: var(--gap) 0 0 var(--gap);
+  }
+  .prosjektImg{
+    width: calc(100% - (var(--gap) * 2));
+    place-self: center start;
+    z-index: 900;
+  }
+  .prosjektImgH{
+    place-self: center end;
+  }
+}
+
+/* Header og nav */
 
 #header {
   background-color: transparent;
   z-index: 9999;
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 #mainNav {

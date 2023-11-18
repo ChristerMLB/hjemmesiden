@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/parallax-js": "^3.1.2",
     "@vercel/analytics": "^1.1.1",
+    "mysql2": "^3.6.3",
     "next": "14.0.1",
     "parallax-js": "^3.1.0",
     "react": "^18.2.0",

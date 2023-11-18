@@ -1,4 +1,3 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -12,11 +11,11 @@ export const MainNav = ({}: Props) => {
         <ul>
           ☙
           <li>
-            <a href='#'>barnehagegreier</a>
+            <a href='/bhg'>barnehagegreier</a>
           </li>
           <li>•</li>
           <li>
-            <a href='#'>webutvikling</a>
+            <a href='/web'>webutvikling</a>
           </li>
           <li>❧</li>
         </ul>
