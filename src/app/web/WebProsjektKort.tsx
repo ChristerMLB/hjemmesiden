@@ -1,5 +1,6 @@
 'use client';
 import { WebProject } from "@/types/Web"
+import Image from "next/image";
 
 type WebProjectKortProps = {
     prosjekt: WebProject,
@@ -19,7 +20,13 @@ type WebProjectKortProps = {
 <div className="prosjektBeskrivelse">
           <h2>{prosjekt?.navn}</h2>
             <p>{prosjekt?.ingress}</p>
-            <p className="teknologier">{prosjekt?.teknologier}</p>
+            <div className="teknologier">
+              {prosjekt?.teknologier
+              .split(", ")
+              .map((teknologi)=>{
+                return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
+              })}
+            </div>
 </div>
         </div>
           </>
@@ -30,8 +37,14 @@ type WebProjectKortProps = {
         <div className="prosjektBeskrivelseWrapper prosjektBeskrivelseWrapperH">
 <div className="prosjektBeskrivelse">
           <h2>{prosjekt?.navn}</h2>
-            <p>{prosjekt?.ingress}</p>
-            <div className="teknologier">{prosjekt?.teknologier}</div>
+               <p>{prosjekt?.ingress}</p>
+             <div className="teknologier">
+              {prosjekt?.teknologier
+              .split(", ")
+              .map((teknologi)=>{
+                return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
+              })}
+            </div>
 </div>
         <div className="spacer spacerH"></div>
         </div>

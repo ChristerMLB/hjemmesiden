@@ -75,6 +75,11 @@ a:hover {
   height: 2em;
   background: linear-gradient(180deg, var(--shadowOnWhite), white);
 }
+.teknologier{
+  display: flex;
+  gap: .5em;
+  margin: 1em 0 0 0;
+}
 
 @media (min-width:600px){
 
