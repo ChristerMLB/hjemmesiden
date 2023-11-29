@@ -39,24 +39,28 @@ const Web = ({}: HomeProps) => {
   return (
   currentProject ?
 
-    <div className="wrapper">
-      <MainNav />
-      <WebProsjekt prosjekt={currentProject} />
-    </div>
-
+<>
+        <MainNav />
+      <div className="wrapper">
+        <WebProsjekt prosjekt={currentProject} />
+      </div>
+  
+</>
     :
 
-    <div className="wrapper">
-    <MainNav />
-      <div className="prosjektListeWrapper">
-    <IntroBoks webArray={webArray} />
-      {webArray?.map((prosjekt, i)=>{
-        if(i > 0){
-          return <WebProsjektKort prosjekt={prosjekt} key={prosjekt.index} />
-        }
-      })}
+    <>
+      <MainNav />
+      <div className="wrapper">
+        <div className="prosjektListeWrapper">
+      <IntroBoks webArray={webArray} />
+        {webArray?.map((prosjekt, i)=>{
+          if(i > 0){
+            return <WebProsjektKort prosjekt={prosjekt} key={prosjekt.index} />
+          }
+        })}
+        </div>
       </div>
-    </div>
+    </>
     );
 };
 export default Web;
