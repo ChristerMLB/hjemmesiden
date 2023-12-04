@@ -16,9 +16,9 @@ type WebProjectKortProps = {
           <img src={`img/prosjektPreview/${prosjekt?.previewimg}`} alt={prosjekt?.previewimgalt} />
         </div>
         <div className="prosjektBeskrivelseWrapper">
-        <div className="spacer"></div>
-<div className="prosjektBeskrivelse">
-          <h2>{prosjekt?.navn}</h2>
+          <div className="spacer"></div>
+          <div className="prosjektBeskrivelse">
+            <h2>{prosjekt?.navn}</h2>
             <p>{prosjekt?.ingress}</p>
             <div className="teknologier">
               {prosjekt?.teknologier
@@ -27,26 +27,26 @@ type WebProjectKortProps = {
                 return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
               })}
             </div>
-</div>
-        </div>
+          </div>
+        </div> 
           </>
 
         :
 
           <>
         <div className="prosjektBeskrivelseWrapper prosjektBeskrivelseWrapperH">
-<div className="prosjektBeskrivelse">
-          <h2>{prosjekt?.navn}</h2>
-               <p>{prosjekt?.ingress}</p>
-             <div className="teknologier">
+          <div className="prosjektBeskrivelse">
+            <h2>{prosjekt?.navn}</h2>
+            <p>{prosjekt?.ingress}</p>
+            <div className="teknologier">
               {prosjekt?.teknologier
               .split(", ")
               .map((teknologi)=>{
                 return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
               })}
             </div>
-</div>
-        <div className="spacer spacerH"></div>
+          </div>
+          <div className="spacer spacerH"></div>
         </div>
         <div className="prosjektImg prosjektImgH">
           <img src={`img/prosjektPreview/${prosjekt?.previewimg}`} alt={prosjekt?.previewimgalt} />

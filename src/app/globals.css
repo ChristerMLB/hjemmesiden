@@ -35,6 +35,7 @@ a:hover {
 }
 .wrapper {
   margin: 0 auto;
+  width: calc(100vw - (var(--gap) * 2));
   max-width: 80em;
   display: grid;
 }
@@ -43,7 +44,7 @@ a:hover {
 .prosjektListeWrapper {
   display: grid;
   margin-top: 200px;
-  gap: var(--gap);
+  gap: calc(var(--gap) * 4);
 }
 
 .introBoks{
@@ -57,6 +58,7 @@ a:hover {
 .webProsjekt {
   display: grid;
   margin: var(--gap);
+  grid-template-rows: auto auto;
 }
 .prosjektBeskrivelseWrapper {
   display: grid;
@@ -66,7 +68,7 @@ a:hover {
   border-radius: 0 0 var(--corners) var(--corners);
 }
 .prosjektBeskrivelse{
-  margin: var(--gap);
+  margin: calc(var(--gap) - 2em) var(--gap) var(--gap) var(--gap);
 }
 .prosjektImg{
   max-height: 20em;
@@ -74,9 +76,11 @@ a:hover {
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: var(--corners);
+  order: -2;
 }
 .spacer{
   height: 2em;
+  order: -1;
   background: linear-gradient(180deg, var(--shadowOnWhite), white);
 }
 .teknologier{
@@ -85,7 +89,7 @@ a:hover {
   margin: 1em 0 0 0 ;
 }
 
-@media (min-width:600px){
+@media (min-width:1200px){
 
   :root {
     --gap: 1em;
@@ -93,6 +97,10 @@ a:hover {
 
   .introBoks{
     margin: calc(var(--gap) * 5) 0 calc(var(--gap) * 10) 0;
+  }
+
+  .prosjektListeWrapper{
+    gap: var(--gap);
   }
 
   .webProsjekt{
@@ -105,6 +113,7 @@ a:hover {
     height: 100%;
     width: 2em;
     background: linear-gradient(to right, var(--shadowOnWhite), white);
+    order: unset;
   }
   .spacerH {
     background: linear-gradient(to left, var(--shadowOnWhite), white);
@@ -124,11 +133,14 @@ a:hover {
     margin-right: calc(0em - (var(--gap) * 2));
     border-radius: var(--corners) 0 0 var(--corners);
   }
+  .prosjektBeskrivelse{
+    margin: var(--gap);
+  }
   .prosjektImg{
     width: calc(100% - (var(--gap) * 2));
     place-self: center start;
     z-index: 900;
-    order: -1; 
+    order: unset;
   }
   .prosjektImgH{
     place-self: center end;
