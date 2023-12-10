@@ -18,7 +18,7 @@ type WebProjectKortProps = {
         <div className="prosjektBeskrivelseWrapper">
           <div className="spacer"></div>
           <div className="prosjektBeskrivelse">
-            <h2>{prosjekt?.navn}</h2>
+            <a href={`?prosjekt=${prosjekt?.navn}`}><h2>{prosjekt?.navn}</h2></a>
             <p>{prosjekt?.ingress}</p>
             <div className="teknologier">
               {prosjekt?.teknologier
@@ -36,7 +36,7 @@ type WebProjectKortProps = {
           <>
         <div className="prosjektBeskrivelseWrapper prosjektBeskrivelseWrapperH">
           <div className="prosjektBeskrivelse">
-            <h2>{prosjekt?.navn}</h2>
+            <a href={`?prosjekt=${prosjekt?.navn}`}><h2>{prosjekt?.navn}</h2></a>
             <p>{prosjekt?.ingress}</p>
             <div className="teknologier">
               {prosjekt?.teknologier
