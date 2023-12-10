@@ -19,15 +19,19 @@ type WebProjectKortProps = {
           <div className="spacer"></div>
           <div className="prosjektBeskrivelse">
             <a href={`?prosjekt=${prosjekt?.navn}`}><h2>{prosjekt?.navn}</h2></a>
-            <p>{prosjekt?.ingress}</p>
-            <div className="teknologier">
-              {prosjekt?.teknologier
-              .split(", ")
-              .map((teknologi)=>{
-                return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
-              })}
-            </div>
+            <p className="ingress">{prosjekt?.ingress} <a href={`?prosjekt=${prosjekt?.navn}`}>Les mer...</a></p>
+            
           </div>
+            <div className="teknologier">
+              <p>
+                Teknologier:
+                {prosjekt?.teknologier
+                .split(", ")
+                .map((teknologi)=>{
+                  return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
+                })}
+              </p>
+            </div>
         </div> 
           </>
 
@@ -37,15 +41,17 @@ type WebProjectKortProps = {
         <div className="prosjektBeskrivelseWrapper prosjektBeskrivelseWrapperH">
           <div className="prosjektBeskrivelse">
             <a href={`?prosjekt=${prosjekt?.navn}`}><h2>{prosjekt?.navn}</h2></a>
-            <p>{prosjekt?.ingress}</p>
-            <div className="teknologier">
-              {prosjekt?.teknologier
-              .split(", ")
-              .map((teknologi)=>{
-                return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
-              })}
-            </div>
+            <p className="ingress">{prosjekt?.ingress} <a href={`?prosjekt=${prosjekt?.navn}`}>Les mer...</a></p>
           </div>
+            <div className="teknologier">
+              <p>
+                Teknologier: {prosjekt?.teknologier
+                .split(", ")
+                .map((teknologi)=>{
+                  return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
+                })}
+              </p>
+            </div>
           <div className="spacer spacerH"></div>
         </div>
         <div className="prosjektImg prosjektImgH">

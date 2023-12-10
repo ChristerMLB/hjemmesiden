@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --gap: .6em;
+  --gap: .5em;
   --black: #091317;
   --shadowOnTransparent: #09131788;
   --shadowOnWhite: #e4ebee;
@@ -29,9 +29,6 @@ h1{
   font-size: 2rem;
   font-weight: bold;
 }
-h2 {
-  font-weight: bold;
-}
 a{
   color: var(--bright);
   font-size: .8rem;
@@ -40,6 +37,11 @@ a{
 a:hover {
   cursor: pointer;
   color: var(--secondary);
+}
+h2 {
+  font-weight: bold;
+  color: var(--black);
+  font-size: 1.1rem;
 }
 .wrapper {
   margin: 0 auto;
@@ -51,7 +53,7 @@ a:hover {
 /* Prosjektliste */
 .prosjektListeWrapper, .enkeltProsjektWrapper {
   display: grid;
-  margin-top: 200px;
+  margin-top: 250px;
   gap: calc(var(--gap) * 4);
 }
 
@@ -76,18 +78,35 @@ a:hover {
   border-radius: 0 0 var(--corners) var(--corners);
 }
 .prosjektBeskrivelse{
-  margin: calc(var(--gap) - 2em) var(--gap) var(--gap) var(--gap);
+  margin: calc(var(--gap) - 1em) var(--gap) var(--gap) var(--gap);
 }
 .prosjektBeskrivelse p{
   margin: 1em 0;
+  display: flex;
+}
+.prosjektBeskrivelse .ingress{
+  display: block;
 }
 .prosjektImg{
   max-height: 20em;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr;
+  /* grid-template-rows: auto 1fr; */
+  grid-template-areas: image;
   border-radius: var(--corners);
   order: -2;
+  justify-items: end;
+}
+.prosjektImg img{ grid-area: image; }
+.besokeKnapp{
+  background-color: var(--secondary);
+  color: var(--black);
+  padding: .6em 1em;
+  border-radius: var(--corners);
+}
+.besokeKnapp:hover{
+  background-color: var(--black);
+  color: white;
 }
 .spacer{
   height: 2em;
@@ -97,7 +116,6 @@ a:hover {
 .teknologier{
   display: flex;
   gap: .5em;
-  margin: 1em 0 0 0 ;
   width: 100%;
   font-size: .8rem;
   padding: 1em;
@@ -109,6 +127,7 @@ a:hover {
   text-align: right;
 }
 .teknologier, p{ display: flex; gap: .5em;}
+
 
 @media (min-width:1200px){
 
@@ -142,7 +161,7 @@ a:hover {
   }
   .prosjektBeskrivelseWrapper {
     grid-template-rows: 1fr;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     margin: var(--gap) 0;
     min-width: 20em;
     max-width: 40em;
