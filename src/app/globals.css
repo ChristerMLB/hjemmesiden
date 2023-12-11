@@ -67,13 +67,13 @@ h2 {
 
 .webProsjekt {
   display: grid;
-  margin: var(--gap);
+  margin: 2em var(--gap);
   grid-template-rows: auto auto;
 }
 .prosjektBeskrivelseWrapper {
   display: grid;
   grid-template-rows: 2em auto;
-  margin: 0 var(--gap);
+  margin: 0 calc(var(--gap) * 2);
   background-color: white;
   border-radius: 0 0 var(--corners) var(--corners);
 }
@@ -92,12 +92,11 @@ h2 {
   overflow: hidden;
   display: grid;
   /* grid-template-rows: auto 1fr; */
-  grid-template-areas: image;
   border-radius: var(--corners);
   order: -2;
   justify-items: end;
+  align-content: center;
 }
-.prosjektImg img{ grid-area: image; }
 .besokeKnapp{
   background-color: var(--secondary);
   color: var(--black);
@@ -162,7 +161,7 @@ h2 {
   .prosjektBeskrivelseWrapper {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
-    margin: var(--gap) 0;
+    margin: 8em 0;
     min-width: 20em;
     max-width: 40em;
     margin-left: calc(0em - (var(--gap) * 2));
@@ -179,6 +178,7 @@ h2 {
   .prosjektImg{
     width: calc(100% - (var(--gap) * 2));
     place-self: center start;
+    max-height: 60em;
     z-index: 900;
     order: unset;
   }
