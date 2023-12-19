@@ -25,11 +25,12 @@ type WebProjectKortProps = {
             <div className="teknologier">
               <p>
                 Teknologier:
-                {prosjekt?.teknologier
+                {prosjekt?.teknologier ?
+                prosjekt?.teknologier
                 .split(", ")
                 .map((teknologi)=>{
                   return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
-                })}
+                }) : null }
               </p>
             </div>
         </div> 
@@ -45,11 +46,13 @@ type WebProjectKortProps = {
           </div>
             <div className="teknologier">
               <p>
-                Teknologier: {prosjekt?.teknologier
-                .split(", ")
-                .map((teknologi)=>{
-                  return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
-                })}
+                Teknologier: 
+                {prosjekt?.teknologier ?
+                  prosjekt?.teknologier
+                  .split(", ")
+                  .map((teknologi)=>{
+                    return <Image src={`/img/teknologier/${teknologi}.png`} alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
+                }) : null}
               </p>
             </div>
           <div className="spacer spacerH"></div>

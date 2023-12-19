@@ -5,7 +5,7 @@ const webListe = async (req: NextApiRequest, res: NextApiResponse) => {
     let connection;
     try{
         connection = await pool.promise().getConnection();
-        const [intro] = await connection.query('SELECT * FROM fortelle2.web');
+        const [intro] = await connection.query('SELECT * FROM fortelle2.oldweb');
         res.status(200).json(intro);
     }catch(e){
         res.status(500).json({error: `En feil oppsto under oppslag i databasen: ${e}`});
