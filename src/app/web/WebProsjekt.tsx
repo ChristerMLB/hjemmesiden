@@ -20,6 +20,11 @@ type WebProjectProps = {
               </h2>
               
               <p>{prosjekt?.ingress}</p>
+                    { prosjekt?.extraimg && prosjekt?.extraimgalt ?  
+                        <div className="prosjektImg2">
+                          <img src={`img/prosjektPreview/${prosjekt?.extraimg}`} alt={prosjekt?.extraimgalt} />
+                        </div>
+                    : null }
               <p>{prosjekt?.mertekst}</p>
                   <p>
                     {prosjekt?.url ? <a href={prosjekt?.url}>
@@ -38,17 +43,12 @@ type WebProjectProps = {
                     prosjekt?.teknologier
                     .split(", ")
                     .map((teknologi)=>{
-                      return <Image src={`/img/teknologier/${teknologi}.png`} className="teknologiIkon" alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
+                      return <Image src={`/img/teknologier/${teknologi}.png`} className="teknologiIkon aspect-auto" alt={teknologi} height={20} width={20} key={`${teknologi}${prosjekt.index}`} />
                     }) : null}
                   </p>
                 </div>
           </div>
    
-          { prosjekt?.extraimg && prosjekt?.extraimgalt ?  
-              <div className="prosjektImg2">
-                <img src={`img/prosjektPreview/${prosjekt?.extraimg}`} alt={prosjekt?.extraimgalt} />
-              </div>
-          : null }
           <div className="prosjektImg">
             <img src={`img/prosjektPreview/${prosjekt?.previewimg}`} alt={prosjekt?.previewimgalt} />
           </div>

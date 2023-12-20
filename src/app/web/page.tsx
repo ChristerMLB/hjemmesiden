@@ -14,8 +14,8 @@ type HomeProps = {
 
 const Web = ({}: HomeProps) => {
   const [webArray, setWebArray] = useState<WebArray | null>(null);
-  const [oldWebArray, setOldWebArray] = useState<WebArray | null>(null);
   const [currentProject, setCurrentProject] = useState<WebProject | undefined>(undefined);
+  const [showOld, setShowOld] = useState<boolean>(false);
   const prosjekt = useSearchParams()?.get('prosjekt');
   
   useEffect(()=>{
@@ -30,16 +30,6 @@ const Web = ({}: HomeProps) => {
     getWebArray();
   }, []);
 
-  async function getOldWebArray(){
-    try{
-      const fetchedOldWebArray = await fetch('api/oldWeb').then((response)=>response.json());
-      console.log(fetchedOldWebArray);
-      setOldWebArray(fetchedOldWebArray);
-
-    }catch(e){
-      throw new Error(`Fant ikke de gamle webprosjektene: ${e}`);
-    }
-  }
   
   useEffect(()=>{
     if(webArray && prosjekt){
@@ -73,8 +63,7 @@ const Web = ({}: HomeProps) => {
           </div>
         : null}
 
-        <button onClick={getOldWebArray}>Last inn eldre webprosjekter</button>
-      {oldWebArray ?
+      {showOld ?
 
         <div className="prosjektListeWrapper">
           {webArray?.map((prosjekt, i)=>{
@@ -84,7 +73,10 @@ const Web = ({}: HomeProps) => {
           })}
         </div>
 
-        : null
+        : <div className="gamleProsjekterKnappWrapper">
+            {/* <div className="gamleProsjekterIntro"><p>{webArray ? webArray[0].mertekst : '...'}</p></div> */}
+            <button className="gamleProsjekterKnapp" onClick={()=>setShowOld(true)}>Last inn eldre webprosjekter</button>
+          </div>
         }
       </div>
     </>

@@ -11,7 +11,7 @@ const webListe = async (req: NextApiRequest, res: NextApiResponse) => {
         res.status(500).json({error: `En feil oppsto under oppslag i databasen: ${e}`});
         throw new Error(`En feil oppsto under oppslag i databasen: ${e}`);
     }finally{
-        if(connection){connection.release();};
+        if(connection){connection.release(); }
     }
 }
 
