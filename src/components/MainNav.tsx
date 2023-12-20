@@ -8,8 +8,7 @@ export const MainNav = ({}: Props) => {
     <header id='header'>
       <nav id='mainNav'>
         <div id='mainNavContent'>
-      <img src='img/logoen.png' alt="logo med teksten 'fortelle'" id='logoen' />
-          <div className='makeSpaceForLogo'></div>
+      <a href='/'><img src='img/logoen.png' alt="logo med teksten 'fortelle'" id='logoen' /></a>
           <ul>
             ☙
             <li>

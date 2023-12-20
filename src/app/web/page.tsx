@@ -73,11 +73,13 @@ const Web = ({}: HomeProps) => {
           })}
         </div>
 
-        : <div className="gamleProsjekterKnappWrapper">
-            {/* <div className="gamleProsjekterIntro"><p>{webArray ? webArray[0].mertekst : '...'}</p></div> */}
+        : webArray ? 
+          
+          <div className="gamleProsjekterKnappWrapper">
             <button className="gamleProsjekterKnapp" onClick={()=>setShowOld(true)}>Last inn eldre webprosjekter</button>
           </div>
-        }
+          
+        : null }
       </div>
     </>
     );

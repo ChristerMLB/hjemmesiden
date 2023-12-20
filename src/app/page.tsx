@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <MainNav />
-      <div id='scene' className='overflow-hidden'>
+      <div id='scene' className='overflow-clip'>
         <div
           className='parallaxBackgroundParticles overflow-hidden'
           data-depth='0.1'

@@ -13,19 +13,21 @@ type WebProjectProps = {
     return (
       <div className="enkeltProsjektWrapper">
         <div className="webProsjekt">
-          <div className="prosjektBeskrivelseWrapper">
+          <div className="prosjektBeskrivelseWrapper enkeltProsjektBeskrivelseWrapper">
             <div className="spacer"></div>
             <div className="prosjektBeskrivelse">
               <h2>{prosjekt?.navn} 
               </h2>
               
               <p>{prosjekt?.ingress}</p>
-                    { prosjekt?.extraimg && prosjekt?.extraimgalt ?  
-                        <div className="prosjektImg2">
-                          <img src={`img/prosjektPreview/${prosjekt?.extraimg}`} alt={prosjekt?.extraimgalt} />
-                        </div>
-                    : null }
-              <p>{prosjekt?.mertekst}</p>
+              <p>
+                {prosjekt?.mertekst}
+                { prosjekt?.extraimg && prosjekt?.extraimgalt ?  
+                    <div className="prosjektImg2">
+                      <img src={`img/prosjektPreview/${prosjekt?.extraimg}`} alt={prosjekt?.extraimgalt} />
+                    </div>
+                : null }
+              </p>
                   <p>
                     {prosjekt?.url ? <a href={prosjekt?.url}>
                       <button className="besokeKnapp"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /> besøk prosjektet</button>
@@ -49,7 +51,7 @@ type WebProjectProps = {
                 </div>
           </div>
    
-          <div className="prosjektImg">
+          <div className="prosjektImg overflow-y-scroll">
             <img src={`img/prosjektPreview/${prosjekt?.previewimg}`} alt={prosjekt?.previewimgalt} />
           </div>
         </div>

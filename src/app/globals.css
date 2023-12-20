@@ -53,13 +53,13 @@ h2 {
 /* Prosjektliste */
 .prosjektListeWrapper, .enkeltProsjektWrapper {
   display: grid;
-  margin-top: 250px;
   gap: calc(var(--gap) * 4);
 }
 
 .introBoks{
   margin: 0 var(--gap);
   padding: var(--gap);
+  padding-top: 250px;
   color: var(--black);
   border-radius: var(--corners);
   background-color: #ffffff88;
@@ -112,20 +112,9 @@ h2 {
   justify-items: end;
   align-content: center;
 }
-.prosjektImg2{
-  float: right;
-  max-width: 40%;
-  margin-left: var(--gap);
-}
-.besokeKnapp{
-  background-color: var(--secondary);
-  color: var(--black);
-  padding: .6em 1em;
-  border-radius: var(--corners);
-}
-.besokeKnapp:hover{
-  background-color: var(--black);
-  color: white;
+.prosjektImg img{
+  width: 100%;
+  align-self: center;
 }
 .spacer{
   height: 2em;
@@ -139,7 +128,6 @@ h2 {
   height: 20px;
   font-size: .8rem;
   padding: 1em;
-  /* background-color: var(--shadowOnWhite); */
   background-image: linear-gradient(180deg, var(--shadowOnWhite), white, white);
   border-radius: var(--corners);
   justify-content: space-between;
@@ -148,21 +136,45 @@ h2 {
 }
 .teknologier, p{ display: flex; gap: .5em;}
 
+/* Enkeltprosjekt */
+
+.enkeltProsjektWrapper{
+  margin-top: 250px;
+}
+.besokeKnapp{
+  background-color: var(--secondary);
+  color: var(--black);
+  padding: .6em 1em;
+  border-radius: var(--corners);
+}
+.besokeKnapp:hover{
+  background-color: var(--black);
+  color: white;
+}
+.prosjektImg2{
+  float: right;
+  max-width: 40%;
+  max-height: 8em;
+  margin-left: var(--gap);
+  overflow-y: scroll;
+}
+
+/* Storskjerm */
 
 @media (min-width:1200px){
-
+  
   :root {
     --gap: 1em;
   }
-
+  
   .introBoks{
     margin: calc(var(--gap) * 5) 0 calc(var(--gap) * 10) 0;
   }
-
+  
   .prosjektListeWrapper{
     gap: var(--gap);
   }
-
+  
   .webProsjekt{
     width: 100%;
     grid-template-columns: 1fr 1fr;
@@ -192,6 +204,9 @@ h2 {
     place-self: center end;
     margin-right: calc(0em - (var(--gap) * 2));
     border-radius: var(--corners) 0 0 var(--corners);
+  }
+  .enkeltProsjektBeskrivelseWrapper{
+    margin-left: 0;
   }
   .prosjektBeskrivelse{
     margin: var(--gap);
@@ -248,10 +263,6 @@ h2 {
 }
 #mainNavContent svg {
   margin-bottom: -0.5px;
-}
-.makeSpaceForLogo {
-  width: 95px;
-  height: 10px;
 }
 #logoen {
   background-color: transparent;
