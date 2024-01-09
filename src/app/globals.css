@@ -3,359 +3,363 @@
 @tailwind utilities;
 
 :root {
-  --gap: .5em;
-  --black: #091317;
-  --shadowOnTransparent: #09131788;
-  --shadowOnWhite: #e4ebee;
-  --bright: orangered;
-  --secondary: #71cbf5;
-  --corners: .1em;
+   --gap: 0.5em;
+   --black: #091317;
+   --shadowOnTransparent: #09131788;
+   --shadowOnWhite: #e4ebee;
+   --bright: orangered;
+   --secondary: #71cbf5;
+   --corners: 0.1em;
 }
 
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url(../../public/img/taageskog.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  font-size: 1.1em;
+   font-family: Arial, Helvetica, sans-serif;
+   background-image: url(../../public/img/taageskog.jpg);
+   background-attachment: fixed;
+   background-size: cover;
+   font-size: 1.1em;
 }
-h1{
-  font-size: 2rem;
-  font-weight: bold;
+h1 {
+   font-size: 2rem;
+   font-weight: bold;
 }
-a{
-  color: var(--bright);
-  font-size: .8rem;
-  font-weight: 600;
+a {
+   color: var(--bright);
+   font-size: 0.8rem;
+   font-weight: 600;
 }
 a:hover {
-  cursor: pointer;
-  color: var(--secondary);
+   cursor: pointer;
+   color: var(--secondary);
 }
 h2 {
-  font-weight: bold;
-  color: var(--black);
-  font-size: 1.1rem;
+   font-weight: bold;
+   color: var(--black);
+   font-size: 1.1rem;
 }
 .wrapper {
-  margin: 0 auto;
-  width: calc(100vw - (var(--gap) * 2));
-  max-width: 80em;
-  display: grid;
+   margin: 0 auto;
+   width: calc(100vw - (var(--gap) * 2));
+   max-width: 80em;
+   display: grid;
 }
 
 /* Prosjektliste */
-.prosjektListeWrapper, .enkeltProsjektWrapper {
-  display: grid;
-  gap: calc(var(--gap) * 4);
+.prosjektListeWrapper,
+.enkeltProsjektWrapper {
+   display: grid;
+   gap: calc(var(--gap) * 4);
 }
 
-.introBoks{
-  margin: 0 var(--gap);
-  padding: var(--gap);
-  padding-top: 250px;
-  color: var(--black);
-  border-radius: var(--corners);
-  background-color: #ffffff88;
+.introBoks {
+   margin: 0 var(--gap);
+   padding: var(--gap);
+   padding-top: 250px;
+   color: var(--black);
+   border-radius: var(--corners);
+   background-color: #ffffff88;
 }
 .webProsjekt {
-  display: grid;
-  margin: 2em var(--gap);
-  grid-template-rows: auto auto;
+   display: grid;
+   margin: 2em var(--gap);
+   grid-template-rows: auto auto;
 }
-.gamleProsjekterKnappWrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.gamleProsjekterKnappWrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
-.gamleProsjekterKnapp{
-  margin: 20vh var(--gap);
-  color: white;
-  font-size: 2rem;
-  padding: 1em;
-  max-width: 10em;
-  background-color: var(--black);
-  border-radius: 100%;
-  aspect-ratio: 1/1;
+.gamleProsjekterKnapp {
+   margin: 20vh var(--gap);
+   color: white;
+   font-size: 2rem;
+   padding: 1em;
+   max-width: 10em;
+   background-color: var(--black);
+   border-radius: 100%;
+   aspect-ratio: 1/1;
 }
-.gamleProsjekterKnapp:hover{
-  background-color: var(--bright);
+.gamleProsjekterKnapp:hover {
+   background-color: var(--bright);
 }
 .prosjektBeskrivelseWrapper {
-  display: grid;
-  grid-template-rows: 2em auto;
-  margin: 0 calc(var(--gap) * 2);
-  background-color: white;
-  border-radius: 0 0 var(--corners) var(--corners);
+   display: grid;
+   grid-template-rows: 2em auto;
+   margin: 0 calc(var(--gap) * 2);
+   background-color: white;
+   border-radius: 0 0 var(--corners) var(--corners);
 }
-.prosjektBeskrivelse{
-  margin: calc(var(--gap) - 1em) var(--gap) var(--gap) var(--gap);
+.prosjektBeskrivelse {
+   margin: calc(var(--gap) - 1em) var(--gap) var(--gap) var(--gap);
 }
-.prosjektBeskrivelse p{
-  margin: 1em 0;
-  display: flex;
+.prosjektBeskrivelse p {
+   margin: 1em 0;
+   display: flex;
 }
-.prosjektBeskrivelse .ingress{
-  display: block;
+.prosjektBeskrivelse .ingress {
+   display: block;
 }
-.prosjektImg{
-  max-height: 20em;
-  overflow: clip;
-  border-radius: var(--corners);
-  order: -2;
-  justify-items: end;
-  align-content: center;
+.prosjektImg {
+   max-height: 20em;
+   overflow: clip;
+   border-radius: var(--corners);
+   order: -2;
+   justify-items: end;
+   align-content: center;
 }
-.prosjektImg img{
-  width: 100%;
-  align-self: center;
+.prosjektImg img {
+   width: 100%;
+   align-self: center;
 }
-.spacer{
-  height: 2em;
-  order: -1;
-  background: linear-gradient(180deg, var(--shadowOnWhite), white);
+.spacer {
+   height: 2em;
+   order: -1;
+   background: linear-gradient(180deg, var(--shadowOnWhite), white);
 }
-.teknologier{
-  display: flex;
-  gap: .5em;
-  width: 100%;
-  height: 20px;
-  font-size: .8rem;
-  padding: 1em;
-  background-image: linear-gradient(180deg, var(--shadowOnWhite), white, white);
-  border-radius: var(--corners);
-  justify-content: space-between;
-  align-items: center;
-  text-align: right;
+.teknologier {
+   display: flex;
+   gap: 0.5em;
+   width: 100%;
+   height: 20px;
+   font-size: 0.8rem;
+   padding: 1em;
+   background-image: linear-gradient(180deg, var(--shadowOnWhite), white, white);
+   border-radius: var(--corners);
+   justify-content: space-between;
+   align-items: center;
+   text-align: right;
 }
-.teknologier, p{ display: flex; gap: .5em;}
+.teknologier,
+p {
+   display: flex;
+   gap: 0.5em;
+}
 
 /* Enkeltprosjekt */
 
-.enkeltProsjektWrapper{
-  margin-top: 250px;
+.enkeltProsjektWrapper {
+   margin-top: 250px;
 }
-.besokeKnapp{
-  background-color: var(--secondary);
-  color: var(--black);
-  padding: .6em 1em;
-  border-radius: var(--corners);
+.besokeKnapp {
+   background-color: var(--secondary);
+   color: var(--black);
+   padding: 0.6em 1em;
+   border-radius: var(--corners);
 }
-.besokeKnapp:hover{
-  background-color: var(--black);
-  color: white;
+.besokeKnapp:hover {
+   background-color: var(--black);
+   color: white;
 }
-.prosjektImg2{
-  float: right;
-  max-width: 40%;
-  max-height: 8em;
-  margin-left: var(--gap);
-  overflow-y: scroll;
+.prosjektImg2 {
+   float: right;
+   max-width: 40%;
+   max-height: 8em;
+   margin-left: var(--gap);
+   overflow-y: scroll;
 }
 
 /* Storskjerm */
 
-@media (min-width:1200px){
-  
-  :root {
-    --gap: 1em;
-  }
-  
-  .introBoks{
-    margin: calc(var(--gap) * 5) 0 calc(var(--gap) * 10) 0;
-  }
-  
-  .prosjektListeWrapper{
-    gap: var(--gap);
-  }
-  
-  .webProsjekt{
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-    place-items: center start;
-    margin-top: calc(0em - (var(--gap) * 3));
-  }
-  .spacer{
-    height: 100%;
-    width: 2em;
-    background: linear-gradient(to right, var(--shadowOnWhite), white);
-    order: unset;
-  }
-  .spacerH {
-    background: linear-gradient(to left, var(--shadowOnWhite), white);
-    place-self: end;
-  }
-  .prosjektBeskrivelseWrapper {
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    margin: 8em 0;
-    min-width: 20em;
-    max-width: 40em;
-    margin-left: calc(0em - (var(--gap) * 2));
-    border-radius: 0 var(--corners) var(--corners) 0;
-  }
-  .prosjektBeskrivelseWrapperH{
-    place-self: center end;
-    margin-right: calc(0em - (var(--gap) * 2));
-    border-radius: var(--corners) 0 0 var(--corners);
-  }
-  .enkeltProsjektBeskrivelseWrapper{
-    margin-left: 0;
-  }
-  .prosjektBeskrivelse{
-    margin: var(--gap);
-  }
-  .prosjektImg{
-    width: calc(100% - (var(--gap) * 2));
-    place-self: center start;
-    max-height: 60em;
-    z-index: 900;
-    order: unset;
-  }
-  .prosjektImgH{
-    place-self: center end;
-  }
+@media (min-width: 1200px) {
+   :root {
+      --gap: 1em;
+   }
+
+   .introBoks {
+      margin: calc(var(--gap) * 5) 0 calc(var(--gap) * 10) 0;
+   }
+
+   .prosjektListeWrapper {
+      gap: var(--gap);
+   }
+
+   .webProsjekt {
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      place-items: center start;
+      margin-top: calc(0em - (var(--gap) * 3));
+   }
+   .spacer {
+      height: 100%;
+      width: 2em;
+      background: linear-gradient(to right, var(--shadowOnWhite), white);
+      order: unset;
+   }
+   .spacerH {
+      background: linear-gradient(to left, var(--shadowOnWhite), white);
+      place-self: end;
+   }
+   .prosjektBeskrivelseWrapper {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      margin: 8em 0;
+      min-width: 20em;
+      max-width: 40em;
+      margin-left: calc(0em - (var(--gap) * 2));
+      border-radius: 0 var(--corners) var(--corners) 0;
+   }
+   .prosjektBeskrivelseWrapperH {
+      place-self: center end;
+      margin-right: calc(0em - (var(--gap) * 2));
+      border-radius: var(--corners) 0 0 var(--corners);
+   }
+   .enkeltProsjektBeskrivelseWrapper {
+      margin-left: 0;
+   }
+   .prosjektBeskrivelse {
+      margin: var(--gap);
+   }
+   .prosjektImg {
+      width: calc(100% - (var(--gap) * 2));
+      place-self: center start;
+      max-height: 60em;
+      z-index: 900;
+      order: unset;
+   }
+   .prosjektImgH {
+      place-self: center end;
+   }
 }
 
 /* Header og nav */
 
 #header {
-  background-color: transparent;
-  z-index: 9999;
-  position: fixed;
-  width: 100%;
-  backdrop-filter: blur(15px);
+   background-color: transparent;
+   z-index: 9999;
+   position: fixed;
+   width: 100%;
+   backdrop-filter: blur(15px);
 }
 #mainNav {
-  background-color: black;
-  margin-top: 124px;
-  height: 21px;
-  display: flex;
-  color: var(--bright);
+   background-color: black;
+   margin-top: 124px;
+   height: 21px;
+   display: flex;
+   color: var(--bright);
 }
-#mainNavContent{
-  width: 100%;
-  max-width: 90rem;
-  font-size: 0.8rem;
-  padding: 0 1em;
-  margin: 0 auto;
-  display: flex;
-  gap: 1em;
-  justify-content: space-between;
+#mainNavContent {
+   width: 100%;
+   max-width: 90rem;
+   font-size: 0.8rem;
+   padding: 0 1em;
+   margin: 0 auto;
+   display: flex;
+   gap: 1em;
+   justify-content: space-between;
 }
 #mainNavContent ul {
-  display: flex;
-  gap: 0.8em;
+   display: flex;
+   gap: 0.8em;
 }
 #mainNavContent ul li a,
 #mainNavContent div a {
-  color: white;
-  padding: 20px 0;
+   color: white;
+   padding: 20px 0;
 }
 #mainNavContent ul li a:hover {
-  color: #71cbf5 !important;
+   color: #71cbf5 !important;
 }
 #mainNavContent svg {
-  margin-bottom: -0.5px;
+   margin-bottom: -0.5px;
 }
 #logoen {
-  background-color: transparent;
-  position: absolute;
-  z-index: 99999;
-  top: 100px;
-  margin-top: -13px;
-  width: 95px;
-  height: 87px;
+   background-color: transparent;
+   position: absolute;
+   z-index: 99999;
+   top: 100px;
+   margin-top: -13px;
+   width: 95px;
+   height: 87px;
 }
 
 /* forsiden med alle parallaxgreiene */
 
 #scene {
-  background-image: url(../../public/img/taageskog2.jpg);
-  background-size: cover;
-  overflow: clip;
+   background-image: url(../../public/img/taageskog2.jpg);
+   background-size: cover;
+   overflow: clip;
 }
 .parallaxBackgroundParticles {
-  background-image: url(../../public/img/Particles-Transparent-File.png);
-  background-size: cover;
-  margin-left: -5vw;
-  margin-top: -5vh;
-  width: 120vw;
-  height: 110vh;
+   background-image: url(../../public/img/Particles-Transparent-File.png);
+   background-size: cover;
+   margin-left: -5vw;
+   margin-top: -5vh;
+   width: 120vw;
+   height: 110vh;
 }
 .parallaxMeg {
-  background-image: url(../../public/img/placeholderChrister.png);
-  background-size: 400px;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  width: 100vw;
-  height: 110vh;
+   background-image: url(../../public/img/placeholderChrister.png);
+   background-size: 400px;
+   background-repeat: no-repeat;
+   background-position: bottom center;
+   width: 100vw;
+   height: 110vh;
 }
 .parallaxForgrunn2 {
-  background-size: cover;
-  margin-left: -10%;
-  margin-top: -10%;
-  width: 120%;
-  height: 130%;
-  background-blend-mode: screen;
+   background-size: cover;
+   margin-left: -10%;
+   margin-top: -10%;
+   width: 120%;
+   height: 130%;
+   background-blend-mode: screen;
 }
 .parallaxForgrunn3 {
-  background-image: url(../../public/img/snow.png);
-  background-size: cover;
-  margin-left: -10%;
-  margin-top: -10%;
-  width: 120%;
-  height: 130%;
-  background-blend-mode: screen;
-  pointer-events: none;
-  opacity: 0.2;
+   background-image: url(../../public/img/snow.png);
+   background-size: cover;
+   margin-left: -10%;
+   margin-top: -10%;
+   width: 120%;
+   height: 130%;
+   background-blend-mode: screen;
+   pointer-events: none;
+   opacity: 0.2;
 }
 .parallaxFrontPageLinks {
-  margin-left: calc(50% - (65px + 7.3em));
-  margin-top: 20%;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  align-content: flex-end;
+   margin-left: calc(50% - (65px + 7.3em));
+   margin-top: 20%;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   gap: 50px;
+   align-items: center;
+   align-content: flex-end;
 }
 .parallaxFrontPageLink {
-  padding: 1em 1.3em;
-  border-radius: 2px;
-  font-weight: bold;
-  background-color: white;
-  color: #110022;
-  box-shadow: 0 0 4px white;
-  margin-bottom: 800px;
+   padding: 1em 1.3em;
+   border-radius: 2px;
+   font-weight: bold;
+   background-color: white;
+   color: #110022;
+   box-shadow: 0 0 4px white;
+   margin-bottom: 800px;
 }
 .parallaxGooglyEyes {
-  width: 100%;
-  height: 100%;
-  margin-left: calc(50% - 65px);
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
+   width: 100%;
+   height: 100%;
+   margin-left: calc(50% - 65px);
+   display: flex;
+   align-items: flex-end;
+   gap: 10px;
 }
 .parallaxEye {
-  background-color: #ddeeff;
-  height: 40px;
-  width: 40px;
-  clip-path: circle(50% at 50% 50%);
-  margin-bottom: 390px;
+   background-color: #ddeeff;
+   height: 40px;
+   width: 40px;
+   clip-path: circle(50% at 50% 50%);
+   margin-bottom: 390px;
 }
 .parallaxLeye {
-  margin-bottom: 380px;
+   margin-bottom: 380px;
 }
 .parallaxPupil {
-  background-color: #110022;
-  height: 33px;
-  width: 33px;
-  clip-path: circle(50% at 50% 50%);
+   background-color: #110022;
+   height: 33px;
+   width: 33px;
+   clip-path: circle(50% at 50% 50%);
 }
