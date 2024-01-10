@@ -8,7 +8,7 @@ const antallBloggPoster = async (req: NextApiRequest, res: NextApiResponse) => {
       const antallResultat = await connection.query(
          `SELECT COUNT(*) as antall FROM fortelle2.bloggposter`
       );
-      // @ts-ignore - PLS FIX ME!
+      // @ts-ignore - PLS FIX ME! Gjøre .json først?
       const antall = antallResultat[0][0].antall as number;
       res.status(200).json(antall);
    } catch (e) {
