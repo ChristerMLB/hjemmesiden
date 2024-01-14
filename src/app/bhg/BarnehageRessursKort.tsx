@@ -19,10 +19,10 @@ const BarnehageRessursKort = ({ tittel, bilde, altText, oppsummering }: RessursK
             height={40}
             width={120}
          />
-         <p>
+         <div>
             <h3 className="ressurskorttittel">{tittel}</h3>
-            {oppsummering}
-         </p>
+            <p>{oppsummering}</p>
+         </div>
       </div>
    );
 };

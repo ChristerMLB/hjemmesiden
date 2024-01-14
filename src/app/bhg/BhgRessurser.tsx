@@ -23,14 +23,16 @@ const BhgRessurser = () => {
 
    if (!ressursListe) {
       return (
-         <div className="barnehageressursliste">
-            <BarnehageRessursKort
-               tittel="Laster ressurser..."
-               bilde=""
-               altText=""
-               oppsummering="..."
-               />
-         </div>
+<div className="ressurslistewrapper">
+            <div className="barnehageressursliste">
+               <BarnehageRessursKort
+                  tittel="Laster ressurser..."
+                  bilde=""
+                  altText=""
+                  oppsummering="..."
+                  />
+            </div>
+</div>
       );
     }
     

@@ -70,6 +70,7 @@ p{
    flex-direction: row;
    overflow-x: scroll;
    background-color: var(--shadowOnTransparent);
+   width: calc(100vw - (var(--gap) * 2));
 }
 .barnehageressurskort {
    width: 85vw;
@@ -285,8 +286,10 @@ p {
    padding: 0 1em;
    margin: 0 auto;
    display: flex;
-   gap: 1em;
    justify-content: space-between;
+}
+#mainNavContent a{
+   width: 90px;
 }
 #mainNavContent ul {
    display: flex;

@@ -2,14 +2,24 @@
 
 import { useEffect, useState } from "react";
 import MainNav from "@/components/MainNav";
-import { BloggPost, BloggBrodTekst} from "@/types/Blogg";
+import { BloggPost, BloggBrodTekst } from "@/types/Blogg";
 import { useSearchParams } from "next/navigation";
+import BlogCard from "./BlogCard";
 
 type HomeProps = { post: string | null | undefined };
 
 const Blogg = ({ post }: HomeProps) => {
    const [blogList, setBlogList] = useState<BloggPost[] | null>(null);
    const [blogBrod, setBlogBrod] = useState<BloggBrodTekst | undefined>(undefined);
+
+   const loadingPost = {
+      id: 1,
+      tittel: 'Laster bloggposter',
+      dato: new Date(),
+      hovedbilde_url: '',
+      hovedbilde_alttext: '',
+      ingress: '...',
+   }
 
    useEffect(() => {
       async function getBlogPosts() {
@@ -45,10 +55,15 @@ const Blogg = ({ post }: HomeProps) => {
    }, [blogList, post]);
 
    return (
-      <>
-         <h1>{blogBrod ? blogBrod.brodtekst : null}</h1>
-         <h1>{post ? post : null}</h1>
-      </>
+      <div className="blogwrapper">
+         <h1>Blogg</h1>
+         <BlogCard post={loadingPost} />
+         {blogList ? (
+            blogList.map((post) => <BlogCard post={post} key={post.id} />)
+         ) : (
+            <BlogCard post={loadingPost} />
+         )}
+      </div>
    );
 };
 export default Blogg;
