@@ -10,13 +10,14 @@ type HomeProps = {};
 const Bhg = ({}: HomeProps) => {
 
    const postParam = useSearchParams()?.get("post");
+   const pageParam = useSearchParams()?.get("page");
 
    return (
       <>
          <MainNav />
          <div className="wrapper bhg-wrapper">
            <BhgRessurser />
-           <Blogg post={postParam} />
+           <Blogg post={postParam} page={pageParam ? parseInt(pageParam) : 0} />
          </div>
       </>
    );

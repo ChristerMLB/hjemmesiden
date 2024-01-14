@@ -50,11 +50,24 @@ h3 {
 p{
    font-size: .9rem;
 }
+aside {
+   font-size: .7rem;
+}
 .wrapper {
    margin: 0 auto;
    width: calc(100vw - (var(--gap) * 2));
    max-width: 80em;
    display: grid;
+}
+
+/* blogg */
+
+.blogcardtext p{
+   display: block;
+}
+
+.blogwrapper {
+   max-width: 70ch;
 }
 
 /* Ressursliste */

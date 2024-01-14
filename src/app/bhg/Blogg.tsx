@@ -1,25 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import MainNav from "@/components/MainNav";
 import { BloggPost, BloggBrodTekst } from "@/types/Blogg";
-import { useSearchParams } from "next/navigation";
 import BlogCard from "./BlogCard";
 
-type HomeProps = { post: string | null | undefined };
+type HomeProps = { post: string | null | undefined; page: number };
 
-const Blogg = ({ post }: HomeProps) => {
+const Blogg = ({ post, page }: HomeProps) => {
    const [blogList, setBlogList] = useState<BloggPost[] | null>(null);
    const [blogBrod, setBlogBrod] = useState<BloggBrodTekst | undefined>(undefined);
 
    const loadingPost = {
       id: 1,
-      tittel: 'Laster bloggposter',
+      tittel: "Laster bloggposter",
       dato: new Date(),
-      hovedbilde_url: '',
-      hovedbilde_alttext: '',
-      ingress: '...',
-   }
+      hovedbilde_url: "",
+      hovedbilde_alttext: "",
+      ingress: "...",
+   };
 
    useEffect(() => {
       async function getBlogPosts() {
@@ -59,7 +57,10 @@ const Blogg = ({ post }: HomeProps) => {
          <h1>Blogg</h1>
          <BlogCard post={loadingPost} />
          {blogList ? (
-            blogList.map((post) => <BlogCard post={post} key={post.id} />)
+            blogList.map((post, i) =>
+               // show the post preview if i is between (page * 10) and 10 + (page * 10) - so from 0 to 10 if page is 0.
+               i < 10 + page * 10 && i >= page * 10 ? <BlogCard post={post} key={post.id} /> : null
+            )
          ) : (
             <BlogCard post={loadingPost} />
          )}
