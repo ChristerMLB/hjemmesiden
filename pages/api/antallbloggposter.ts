@@ -1,15 +1,22 @@
 import { pool } from "@/utilities/db";
 import { NextApiRequest, NextApiResponse } from "next";
 
+
 const antallBloggPoster = async (req: NextApiRequest, res: NextApiResponse) => {
-   let connection;
+
+    type Result = {
+        antall:number,
+    }
+
+    let connection;
    try {
       connection = await pool.promise().getConnection();
+       // antallResultat behøver en type. Forsøk å optimalisere resultatet. kall den res
       const antallResultat = await connection.query(
          `SELECT COUNT(*) as antall FROM fortelle2.bloggposter`
-      );
-      // @ts-ignore - PLS FIX ME! Gjøre .json først?
-      const antall = antallResultat[0][0].antall as number;
+      ) as any[][];
+      const antallresultat2:Result = antallResultat[0][0];
+      const antall = antallresultat2.antall;
       res.status(200).json(antall);
    } catch (e) {
       res.status(500).json({ error: `En feil oppsto under oppslag i databasen: ${e}` });

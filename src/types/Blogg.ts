@@ -1,4 +1,5 @@
 export type BloggPost = {
+    // skift navn til id
    post_id: number;
    tittel: string;
    dato: Date;
@@ -11,4 +12,3 @@ export type BloggBrodTekst = {
    brodtekst: string;
    ekstra: string;
 };
-export type BloggList = [BloggPost];
