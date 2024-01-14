@@ -8,7 +8,7 @@ type WebProjectKortProps = {
 const WebProsjektKort = ({ prosjekt }: WebProjectKortProps) => {
    return (
       <div className="webProsjekt">
-         {prosjekt.index % 2 ? (
+         {prosjekt.id % 2 ? (
             <>
                <div className="prosjektImg">
                   <img
@@ -37,7 +37,7 @@ const WebProsjektKort = ({ prosjekt }: WebProjectKortProps) => {
                                       alt={teknologi}
                                       height={20}
                                       width={20}
-                                      key={`${teknologi}${prosjekt.index}`}
+                                      key={`${teknologi}${prosjekt.id}`}
                                    />
                                 );
                              })
@@ -68,7 +68,7 @@ const WebProsjektKort = ({ prosjekt }: WebProjectKortProps) => {
                                       alt={teknologi}
                                       height={20}
                                       width={20}
-                                      key={`${teknologi}${prosjekt.index}`}
+                                      key={`${teknologi}${prosjekt.id}`}
                                    />
                                 );
                              })

@@ -1,5 +1,5 @@
 export type WebProject = {
-   index: number;
+   id: number;
    navn: string;
    ingress: string;
    mertekst: string | null;

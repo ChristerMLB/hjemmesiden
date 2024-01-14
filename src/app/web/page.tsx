@@ -50,7 +50,7 @@ const Web = ({}: HomeProps) => {
                   <IntroBoks intro={webArray[0]} />
                   {webArray?.map((prosjekt, i) => {
                      if (i > 0 && !prosjekt.old) {
-                        return <WebProsjektKort prosjekt={prosjekt} key={prosjekt.index} />;
+                        return <WebProsjektKort prosjekt={prosjekt} key={prosjekt.id} />;
                      }
                   })}
                </div>
@@ -60,7 +60,7 @@ const Web = ({}: HomeProps) => {
                <div className="prosjektListeWrapper">
                   {webArray?.map((prosjekt, i) => {
                      if (i > 0 && prosjekt.old) {
-                        return <WebProsjektKort prosjekt={prosjekt} key={prosjekt.index} />;
+                        return <WebProsjektKort prosjekt={prosjekt} key={prosjekt.id} />;
                      }
                   })}
                </div>

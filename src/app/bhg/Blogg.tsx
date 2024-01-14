@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import MainNav from "@/components/MainNav";
-import { BloggPost, BloggBrodTekst, BloggList } from "@/types/Blogg";
+import { BloggPost, BloggBrodTekst} from "@/types/Blogg";
 import { useSearchParams } from "next/navigation";
 
 type HomeProps = { post: string | null | undefined };
 
 const Blogg = ({ post }: HomeProps) => {
-   const [blogList, setBlogList] = useState<BloggList | null>(null);
+   const [blogList, setBlogList] = useState<BloggPost[] | null>(null);
    const [blogBrod, setBlogBrod] = useState<BloggBrodTekst | undefined>(undefined);
 
    useEffect(() => {
@@ -28,7 +28,7 @@ const Blogg = ({ post }: HomeProps) => {
    useEffect(() => {
       async function getBrodTekst() {
          if (blogList && post) {
-            const id = blogList.find((p) => p.tittel === post)?.post_id;
+            const id = blogList.find((p) => p.tittel === post)?.id;
             try {
                const fetchedBlogBrod = await fetch(`api/bloggbrod?id=${id}`).then((response) =>
                   response.json()

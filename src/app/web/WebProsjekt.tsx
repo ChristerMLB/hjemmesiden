@@ -64,7 +64,7 @@ const WebProsjekt = ({ prosjekt }: WebProjectProps) => {
                                    alt={teknologi}
                                    height={20}
                                    width={20}
-                                   key={`${teknologi}${prosjekt.index}`}
+                                   key={`${teknologi}${prosjekt.id}`}
                                 />
                              );
                           })

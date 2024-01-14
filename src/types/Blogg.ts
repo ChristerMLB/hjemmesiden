@@ -1,6 +1,5 @@
 export type BloggPost = {
-    // skift navn til id
-   post_id: number;
+   id: number;
    tittel: string;
    dato: Date;
    hovedbilde_url: string;

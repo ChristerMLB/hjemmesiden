@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from "react";
 import BarnehageRessursKort from "./BarnehageRessursKort";
 import { RessursKort } from "@/types/Ressurser";
@@ -42,7 +44,7 @@ const BhgRessurser = () => {
                  bilde={ressurs.hovedbilde_url}
                  altText={ressurs.hovedbilde_alttext}
                  oppsummering={ressurs.oppsummering}
-                 key={ressurs.ressursid}
+                 key={ressurs.id}
               />
            ))}
         </div>

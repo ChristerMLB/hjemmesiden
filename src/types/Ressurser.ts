@@ -1,5 +1,5 @@
 export type RessursKort = {
-    ressursid: number,
+    id: number,
     hovedbilde_url: string,
     hovedbilde_alttext: string,
     tittel: string,
