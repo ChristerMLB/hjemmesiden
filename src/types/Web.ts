@@ -12,4 +12,4 @@ export type WebProject = {
    gitHubUrl: string | null;
    old: boolean;
 };
-export type WebArray = [WebProject];
+export type WebArray = WebProject[];

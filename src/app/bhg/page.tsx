@@ -1,7 +1,6 @@
 "use client";
 
 import MainNav from "@/components/MainNav";
-import IntroBoks from "../web/IntroBoks";
 import Blogg from "./Blogg";
 import BhgRessurser from "./BhgRessurser";
 import { useSearchParams } from "next/navigation";
@@ -9,6 +8,7 @@ import { useSearchParams } from "next/navigation";
 type HomeProps = {};
 
 const Bhg = ({}: HomeProps) => {
+
    const postParam = useSearchParams()?.get("post");
 
    return (
@@ -20,6 +20,7 @@ const Bhg = ({}: HomeProps) => {
          </div>
       </>
    );
+
 };
 
 export default Bhg;
