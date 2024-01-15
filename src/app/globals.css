@@ -47,11 +47,11 @@ h2 {
 h3 {
    font-weight: bold;
 }
-p{
-   font-size: .9rem;
+p {
+   font-size: 0.9rem;
 }
 aside {
-   font-size: .7rem;
+   font-size: 0.7rem;
 }
 .wrapper {
    margin: 0 auto;
@@ -60,20 +60,37 @@ aside {
    display: grid;
 }
 
+/* bhg-wrapper */
+
+.bhg-wrapper {
+   display: grid;
+   gap: var(--gap);
+}
+
 /* blogg */
 
-.blogcardtext p{
+.blogcardtext p {
    display: block;
 }
 
-.blogwrapper {
+.blogcard {
    max-width: 70ch;
+   display: grid;
+   gap: var(--gap);
+}
+.blogwrapper {
+   background-color: var(--lightTransparent);
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   gap: var(--gap);
 }
 
 /* Ressursliste */
 
 .ressurslistewrapper {
    margin-top: 250px;
+   width: fit-content;
 }
 
 .barnehageressursliste {
@@ -95,7 +112,7 @@ aside {
    padding: var(--gap);
    background-color: var(--lightTransparent);
 }
-.barnehageressurskort p{
+.barnehageressurskort p {
    display: inline;
 }
 
@@ -274,6 +291,23 @@ p {
    .prosjektImgH {
       place-self: center end;
    }
+   .ressurslistewrapper {
+      height: auto;
+      flex-direction: column;
+      order: 2;
+   }
+   .bhg-wrapper {
+      grid-template-columns: auto min-content;
+   }
+   .barnehageressursliste {
+      flex-direction: column;
+      width: fit-content;
+   }
+   .blogwrapper {
+      display: grid;
+      margin-top: 240px;
+      order: 0;
+   }
 }
 
 /* Header og nav */
@@ -301,7 +335,7 @@ p {
    display: flex;
    justify-content: space-between;
 }
-#mainNavContent a{
+#mainNavContent a {
    width: 90px;
 }
 #mainNavContent ul {
