@@ -1,5 +1,5 @@
 import { BloggPost } from "@/types/Blogg";
-import parse from 'html-react-parser';
+// import parse from 'html-react-parser';
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -17,9 +17,10 @@ const BlogCard = ({post}:BlogCardProps) => {
                 <Image src={`/img/blogg/${post.hovedbilde_url}`} alt={post.hovedbilde_alttext} width={1000} height={500} />
                 <h3>{post.tittel}</h3>
                 <aside>{dato.toLocaleDateString('nb-NO')}</aside>
+                <hr></hr>
             </div>
             <div className="blogcardtext">
-                {parse(post.ingress)}
+                {post.ingress}
             </div>
         </div>
      );
