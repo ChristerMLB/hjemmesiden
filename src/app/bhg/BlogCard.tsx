@@ -1,5 +1,5 @@
 import { BloggPost } from "@/types/Blogg";
-// import parse from 'html-react-parser';
+import parse from 'html-react-parser';
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -20,7 +20,7 @@ const BlogCard = ({post}:BlogCardProps) => {
                 <hr></hr>
             </div>
             <div className="blogcardtext">
-                {post.ingress}
+                {parse(post.ingress)}
             </div>
         </div>
      );
