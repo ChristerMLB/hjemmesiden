@@ -21,10 +21,10 @@
       "parallax-js": "^3.1.0",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
-      "sharp": "^0.33.2"
+      "sharp": "^0.33.1"
    },
    "devDependencies": {
-      "@types/node": "^20.10.8",
+      "@types/node": "^20.11.0",
       "@types/react": "^18.2.47",
       "@types/react-dom": "^18.2.18",
       "autoprefixer": "^10.4.16",
