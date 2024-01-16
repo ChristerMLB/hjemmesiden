@@ -49,6 +49,7 @@ h3 {
 }
 p {
    font-size: 0.9rem;
+   margin: .5rem 0;
 }
 aside {
    font-size: 0.7rem;
@@ -77,7 +78,7 @@ aside {
    max-width: 55ch;
    display: grid;
    gap: var(--gap);
-   margin: calc(var(--gap) * 2) 0;
+   margin: calc(var(--gap) * 2) var(--gap);
 }
 .blogwrapper {
    background-color: var(--lightTransparent);

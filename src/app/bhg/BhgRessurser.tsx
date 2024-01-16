@@ -27,7 +27,7 @@ const BhgRessurser = () => {
             <div className="barnehageressursliste">
                <BarnehageRessursKort
                   tittel="Laster ressurser..."
-                  bilde=""
+                  bilde="loading.gif"
                   altText=""
                   oppsummering="..."
                   />

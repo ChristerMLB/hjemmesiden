@@ -14,7 +14,7 @@ const Blogg = ({ post, page }: HomeProps) => {
       id: 1,
       tittel: "Laster bloggposter",
       dato: new Date(),
-      hovedbilde_url: "",
+      hovedbilde_url: "loading.gif",
       hovedbilde_alttext: "",
       ingress: "...",
    };
@@ -55,7 +55,6 @@ const Blogg = ({ post, page }: HomeProps) => {
    return (
       <div className="blogwrapper">
          <h1>Blogg</h1>
-         <BlogCard post={loadingPost} />
          {blogList ? (
             blogList.map((post, i) =>
                // show the post preview if i is between (page * 10) and 10 + (page * 10) - so from 0 to 10 if page is 0.
