@@ -1,9 +1,18 @@
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 
 type Props = {};
 
 export const MainNav = ({}: Props) => {
+   
+   const [email, setEmail] = useState<null|string>(null);
+
+   useEffect(() =>{
+      var encodedEmail = "ZnJhbmV0dHNpZGVuQGZvcnRlbGxlLm5v";
+      setEmail(atob(encodedEmail));
+   },[])
+
    return (
       <header id="header">
          <nav id="mainNav">
@@ -24,7 +33,7 @@ export const MainNav = ({}: Props) => {
                </ul>
                <ul>
                   <li>
-                     <a href="email:fra-hjemmesiden@fortelle.no" className="kontaktLink">
+                     <a href={`mailto:${email}`} className="kontaktLink">
                         <FontAwesomeIcon icon={faEnvelope} />
                      </a>
                   </li>

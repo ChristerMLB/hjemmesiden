@@ -61,12 +61,20 @@ aside {
    display: grid;
 }
 
+
+
+
+
 /* bhg-wrapper */
 
 .bhg-wrapper {
    display: grid;
    gap: var(--gap);
 }
+
+
+
+
 
 /* blogg */
 
@@ -88,6 +96,10 @@ aside {
    gap: var(--gap);
    padding-bottom: calc(var(--gap) * 4);
 }
+
+
+
+
 
 /* Ressursliste */
 
@@ -118,6 +130,10 @@ aside {
 .barnehageressurskort p {
    display: inline;
 }
+
+
+
+
 
 /* Prosjektliste */
 .prosjektListeWrapper,
@@ -210,6 +226,10 @@ p {
    gap: 0.5em;
 }
 
+
+
+
+
 /* Enkeltprosjekt */
 
 .enkeltProsjektWrapper {
@@ -232,6 +252,10 @@ p {
    margin-left: var(--gap);
    overflow-y: scroll;
 }
+
+
+
+
 
 /* Storskjerm */
 
@@ -305,6 +329,7 @@ p {
    .barnehageressursliste {
       flex-direction: column;
       width: fit-content;
+      overflow-x: unset;
    }
    .blogwrapper {
       display: grid;
@@ -312,6 +337,10 @@ p {
       order: 0;
    }
 }
+
+
+
+
 
 /* Header og nav */
 
@@ -365,6 +394,10 @@ p {
    width: 95px;
    height: 87px;
 }
+
+
+
+
 
 /* forsiden med alle parallaxgreiene */
 
