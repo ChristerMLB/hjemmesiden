@@ -18,7 +18,7 @@ export const MainNav = ({}: Props) => {
          <nav id="mainNav">
             <div id="mainNavContent">
                <a href="/">
-                  <img src="img/logoen.png" alt="logo med teksten 'fortelle'" id="logoen" />
+                  <img src="/img/logoen.png" alt="logo med teksten 'fortelle'" id="logoen" />
                </a>
                <ul>
                   ☙

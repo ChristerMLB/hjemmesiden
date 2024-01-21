@@ -30,6 +30,7 @@ const BhgRessurser = () => {
                   bilde="loading.gif"
                   altText=""
                   oppsummering="..."
+                  id={0}
                   />
             </div>
 </div>
@@ -47,6 +48,7 @@ const BhgRessurser = () => {
                  altText={ressurs.hovedbilde_alttext}
                  oppsummering={ressurs.oppsummering}
                  key={`ressurs-${ressurs.id}`}
+                 id={ressurs.id}
               />
            ))}
         </div>

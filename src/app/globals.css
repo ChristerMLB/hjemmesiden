@@ -49,7 +49,7 @@ h3 {
 }
 p {
    font-size: 0.9rem;
-   margin: .5rem 0;
+   margin: 0.5rem 0;
 }
 aside {
    font-size: 0.7rem;
@@ -61,20 +61,12 @@ aside {
    display: grid;
 }
 
-
-
-
-
 /* bhg-wrapper */
 
 .bhg-wrapper {
    display: grid;
    gap: var(--gap);
 }
-
-
-
-
 
 /* blogg */
 
@@ -90,16 +82,11 @@ aside {
 }
 .blogwrapper {
    background-color: var(--lightTransparent);
-   display: flex;
-   flex-direction: column;
+   display: grid;
    justify-items: center;
    gap: var(--gap);
    padding-bottom: calc(var(--gap) * 4);
 }
-
-
-
-
 
 /* Ressursliste */
 
@@ -129,11 +116,9 @@ aside {
 }
 .barnehageressurskort p {
    display: inline;
+   color: black !important;
+   font-weight: normal;
 }
-
-
-
-
 
 /* Prosjektliste */
 .prosjektListeWrapper,
@@ -225,10 +210,6 @@ aside {
    gap: 0.5em;
 }
 
-
-
-
-
 /* Enkeltprosjekt */
 
 .enkeltProsjektWrapper {
@@ -251,9 +232,6 @@ aside {
    margin-left: var(--gap);
    overflow-y: scroll;
 }
-
-
-
 
 /* Header og nav */
 
@@ -310,12 +288,9 @@ aside {
    left: 50%;
    transform: translate(-50%, 0);
 }
-.kontaktlink{
+.kontaktlink {
    padding: 20px !important;
 }
-
-
-
 
 /* Storskjerm */
 
@@ -392,23 +367,15 @@ aside {
       overflow-x: unset;
    }
    .blogwrapper {
-      display: grid;
       margin-top: 240px;
       order: 0;
    }
-   #logoen{
+   #logoen {
       top: 105px;
       left: unset;
       transform: unset;
    }
 }
-
-
-
-
-
-
-
 
 /* forsiden med alle parallaxgreiene */
 

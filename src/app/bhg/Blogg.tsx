@@ -64,6 +64,7 @@ const Blogg = ({ post, page }: HomeProps) => {
 
    return (
       <div className="blogwrapper">
+         <h1>Barnehagegreier</h1>
          {blogList && !post ? (
             blogList.map((post, i) =>
                // show the post preview if i is between (page * 10) and 10 + (page * 10) - so from 0 to 10 if page is 0.

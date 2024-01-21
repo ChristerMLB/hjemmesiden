@@ -19,13 +19,17 @@ const BlogCard = ({ post }: BlogCardProps) => {
                width={1000}
                height={500}
             />
+
             <a href={`?post=${post.tittel}`}>
                <h3>{post.tittel}</h3>
             </a>
+            
             <aside>{dato.toLocaleDateString("nb-NO")}</aside>
             <hr></hr>
          </div>
-         <div className="blogcardtext">{parse(post.ingress)}</div>
+         <div className="blogcardtext">{parse(post.ingress)}<a href={`?post=${post.tittel}`}>...les videre</a>
+         </div>
+            
       </div>
    );
 };
