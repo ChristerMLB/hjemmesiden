@@ -5,7 +5,6 @@ const bloggBrod = async (req: NextApiRequest, res: NextApiResponse) => {
    let connection;
    const { id } = req.query;
    try {
-      console.log(id);
       connection = await pool.promise().getConnection();
       const [intro] = await connection.query(
          `SELECT * FROM fortelle2.bloggbrodtekster WHERE post_id = ?`,

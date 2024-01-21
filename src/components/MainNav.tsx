@@ -33,7 +33,7 @@ export const MainNav = ({}: Props) => {
                </ul>
                <ul>
                   <li>
-                     <a href={`mailto:${email}`} className="kontaktLink">
+                     <a href={`mailto:${email}`} className="kontaktlink">
                         <FontAwesomeIcon icon={faEnvelope} />
                      </a>
                   </li>

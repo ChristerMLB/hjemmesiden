@@ -46,7 +46,7 @@ const BhgRessurser = () => {
                  bilde={ressurs.hovedbilde_url}
                  altText={ressurs.hovedbilde_alttext}
                  oppsummering={ressurs.oppsummering}
-                 key={ressurs.id}
+                 key={`ressurs-${ressurs.id}`}
               />
            ))}
         </div>
