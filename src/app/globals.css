@@ -11,6 +11,7 @@
    --bright: orangered;
    --secondary: #71cbf5;
    --corners: 0.1em;
+   --headerspace: 200px;
 }
 
 *,
@@ -29,6 +30,9 @@ html {
 h1 {
    font-size: 2rem;
    font-weight: bold;
+}
+.overskrift{
+   padding-top: var(--headerspace);
 }
 a {
    color: var(--bright);
@@ -91,7 +95,7 @@ aside {
 /* Ressursliste */
 
 .ressurslistewrapper {
-   margin-top: 250px;
+   margin-top: var(--headerspace);
    width: fit-content;
 }
 
@@ -130,7 +134,7 @@ aside {
 .introBoks {
    margin: 0 var(--gap);
    padding: var(--gap);
-   padding-top: 250px;
+   padding-top: var(--headerspace);
    color: var(--black);
    border-radius: var(--corners);
    background-color: #ffffff88;
@@ -213,7 +217,7 @@ aside {
 /* Enkeltprosjekt */
 
 .enkeltProsjektWrapper {
-   margin-top: 250px;
+   margin-top: var(--headerspace);
 }
 .besokeKnapp {
    background-color: var(--secondary);
@@ -292,90 +296,6 @@ aside {
    padding: 20px !important;
 }
 
-/* Storskjerm */
-
-@media (min-width: 1200px) {
-   :root {
-      --gap: 1em;
-   }
-
-   .introBoks {
-      margin: calc(var(--gap) * 5) 0 calc(var(--gap) * 10) 0;
-   }
-
-   .prosjektListeWrapper {
-      gap: var(--gap);
-   }
-
-   .webProsjekt {
-      width: 100%;
-      grid-template-columns: 1fr 1fr;
-      place-items: center start;
-      margin-top: calc(0em - (var(--gap) * 3));
-   }
-   .spacer {
-      height: 100%;
-      width: 2em;
-      background: linear-gradient(to right, var(--shadowOnWhite), white);
-      order: unset;
-   }
-   .spacerH {
-      background: linear-gradient(to left, var(--shadowOnWhite), white);
-      place-self: end;
-   }
-   .prosjektBeskrivelseWrapper {
-      grid-template-rows: 1fr;
-      grid-template-columns: 1fr;
-      margin: 8em 0;
-      min-width: 20em;
-      max-width: 40em;
-      margin-left: calc(0em - (var(--gap) * 2));
-      border-radius: 0 var(--corners) var(--corners) 0;
-   }
-   .prosjektBeskrivelseWrapperH {
-      place-self: center end;
-      margin-right: calc(0em - (var(--gap) * 2));
-      border-radius: var(--corners) 0 0 var(--corners);
-   }
-   .enkeltProsjektBeskrivelseWrapper {
-      margin-left: 0;
-   }
-   .prosjektBeskrivelse {
-      margin: var(--gap);
-   }
-   .prosjektImg {
-      width: calc(100% - (var(--gap) * 2));
-      place-self: center start;
-      max-height: 60em;
-      z-index: 900;
-      order: unset;
-   }
-   .prosjektImgH {
-      place-self: center end;
-   }
-   .ressurslistewrapper {
-      height: auto;
-      flex-direction: column;
-      order: 2;
-   }
-   .bhg-wrapper {
-      grid-template-columns: auto min-content;
-   }
-   .barnehageressursliste {
-      flex-direction: column;
-      width: fit-content;
-      overflow-x: unset;
-   }
-   .blogwrapper {
-      margin-top: 240px;
-      order: 0;
-   }
-   #logoen {
-      top: 105px;
-      left: unset;
-      transform: unset;
-   }
-}
 
 /* forsiden med alle parallaxgreiene */
 
@@ -461,4 +381,102 @@ aside {
    height: 33px;
    width: 33px;
    clip-path: circle(50% at 50% 50%);
+}
+
+/* kontaktskjema */
+
+.kontaktskjema {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: var(--gap);
+}
+#melding{
+   height: 40vh;
+}
+
+
+
+/* Storskjerm */
+
+@media (min-width: 1200px) {
+   :root {
+      --gap: 1em;
+   }
+
+   .introBoks {
+      margin: calc(var(--gap) * 5) 0 calc(var(--gap) * 10) 0;
+   }
+
+   .prosjektListeWrapper {
+      gap: var(--gap);
+   }
+
+   .webProsjekt {
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      place-items: center start;
+      margin-top: calc(0em - (var(--gap) * 3));
+   }
+   .spacer {
+      height: 100%;
+      width: 2em;
+      background: linear-gradient(to right, var(--shadowOnWhite), white);
+      order: unset;
+   }
+   .spacerH {
+      background: linear-gradient(to left, var(--shadowOnWhite), white);
+      place-self: end;
+   }
+   .prosjektBeskrivelseWrapper {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      margin: 8em 0;
+      min-width: 20em;
+      max-width: 40em;
+      margin-left: calc(0em - (var(--gap) * 2));
+      border-radius: 0 var(--corners) var(--corners) 0;
+   }
+   .prosjektBeskrivelseWrapperH {
+      place-self: center end;
+      margin-right: calc(0em - (var(--gap) * 2));
+      border-radius: var(--corners) 0 0 var(--corners);
+   }
+   .enkeltProsjektBeskrivelseWrapper {
+      margin-left: 0;
+   }
+   .prosjektBeskrivelse {
+      margin: var(--gap);
+   }
+   .prosjektImg {
+      width: calc(100% - (var(--gap) * 2));
+      place-self: center start;
+      max-height: 60em;
+      z-index: 900;
+      order: unset;
+   }
+   .prosjektImgH {
+      place-self: center end;
+   }
+   .ressurslistewrapper {
+      height: auto;
+      flex-direction: column;
+      order: 2;
+   }
+   .bhg-wrapper {
+      grid-template-columns: auto min-content;
+   }
+   .barnehageressursliste {
+      flex-direction: column;
+      width: fit-content;
+      overflow-x: unset;
+   }
+   .blogwrapper {
+      margin-top: 240px;
+      order: 0;
+   }
+   #logoen {
+      top: 105px;
+      left: unset;
+      transform: unset;
+   }
 }
