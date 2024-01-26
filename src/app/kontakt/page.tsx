@@ -1,5 +1,5 @@
 import MainNav from "@/components/MainNav";
-import Kontaktskjema from "./kontaktskjema";
+import Kontaktskjema from "./Kontaktskjema";
 import ToppOverskrift from "@/components/ToppOverskrift";
 
 const Kontakt = () => {
