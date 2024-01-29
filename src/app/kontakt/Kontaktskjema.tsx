@@ -44,6 +44,9 @@ const Kontaktskjema = () => {
          if(res.ok){
             setSuccess('Melding sendt!')
             setSending(false);
+         }else{
+            const errorData = await res.json();
+            setError(`Fikk ikke sendt melding på grunn av en feil på serveren. Nerdete detaljer: ${errorData.error}]]`);
          };
 
       }catch (e) {

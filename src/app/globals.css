@@ -313,8 +313,8 @@ aside {
    height: 110vh;
 }
 .parallaxMeg {
-   background-image: url(../../public/img/placeholderChrister.png);
-   background-size: 400px;
+   background-image: url(../../public/img/christer.png);
+   background-size: 800px;
    background-repeat: no-repeat;
    background-position: bottom center;
    width: 100vw;
@@ -361,25 +361,25 @@ aside {
 .parallaxGooglyEyes {
    width: 100%;
    height: 100%;
-   margin-left: calc(50% - 65px);
+   margin-left: calc(50% - 75px);
    display: flex;
    align-items: flex-end;
-   gap: 10px;
+   gap: 30px;
 }
 .parallaxEye {
    background-color: #ddeeff;
-   height: 40px;
-   width: 40px;
+   height: 60px;
+   width: 60px;
    clip-path: circle(50% at 50% 50%);
-   margin-bottom: 390px;
+   margin-bottom: 290px;
 }
 .parallaxLeye {
-   margin-bottom: 380px;
+   margin-bottom: 300px;
 }
 .parallaxPupil {
    background-color: #110022;
-   height: 33px;
-   width: 33px;
+   height: 53px;
+   width: 53px;
    clip-path: circle(50% at 50% 50%);
 }
 
