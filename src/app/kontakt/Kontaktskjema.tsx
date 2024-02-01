@@ -15,11 +15,15 @@ const Kontaktskjema = () => {
       e.preventDefault();
       setError(false);
       setSuccess(false);
-
+      const navnRegex = "[A-Za-z\u00C0-\u017F\u0180-\u024F\u1E00-\u1EFFŠšŸÿ'-.]+";
+      if (sending){ return; };
       if (!navnRef.current) {
          setError("Fyll inn navn");
          return;
       }
+       if(!navnRef.current.value.match(navnRegex)){
+           setError("Det ser ut som det er noe som ikke stemmer helt med navnet du har skrevet inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)")
+       }
       if (!epostRef.current) {
          setError("Fyll inn epostadressen din");
          return;
@@ -53,12 +57,12 @@ const Kontaktskjema = () => {
          } else {
             const errorData = await res.json();
             setError(
-               `Fikk ikke sendt melding på grunn av en feil på serveren. Nerdete detaljer: ${errorData.error}]]`
+               `Fikk ikke sendt melding på grunn av en feil på serveren. Detaljer: ${errorData.error}]]`
             );
          }
       } catch (e) {
          setError(
-            `Fikk ikke sendt melding på grunn av en feil på serveren. Nerdete detaljer: ${e}`
+            `Fikk ikke sendt melding på grunn av en feil på serveren. Detaljer: ${e}`
          );
          return;
       }

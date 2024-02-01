@@ -23,9 +23,9 @@ const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
             text: `${melding} \n\nSendt fra nettsiden, svar på ${epost}`,
         })
 
-        // console.log('info:', info);
-        // console.log(req.body);
-        // console.log(`epostskjema mottatt, navn: ${navn}, epostadresse: ${epost}, melding: ${melding}`);
+         //console.log('info:', info);
+         //console.log(req.body);
+         //console.log(`epostskjema mottatt, navn: ${navn}, epostadresse: ${epost}, melding: ${melding}`);
 
         res.status(200).json({success: true});
     }else{
