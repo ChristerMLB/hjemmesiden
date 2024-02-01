@@ -16,6 +16,7 @@ const Kontaktskjema = () => {
       setError(false);
       setSuccess(false);
        const navnRegex = /[A-Za-z \u00C0-\u017F\u0180-\u024F\u1E00-\u1EFFŠšŸÿ'\-\.]+/;
+       const epostRegex = /^[æøåA-Z0-9_!#%&'*+/=?`{|}~^.-]+@[A-Z0-9.-]+$/gi;
       if (sending){ return; };
       if (!navnRef.current) {
          setError("Fyll inn navn");
@@ -29,6 +30,10 @@ const Kontaktskjema = () => {
          setError("Fyll inn epostadressen din");
          return;
       }
+       if(!epostRef.current.value.match(epostRegex)){
+           setError("Det ser ut som det er noe som ikke stemmer helt med epostadressen du har fylt inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)");
+           return;
+       }
       if (!meldingRef.current) {
          setError("Fyll inn melding");
          return;
