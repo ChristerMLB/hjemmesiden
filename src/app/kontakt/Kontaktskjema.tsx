@@ -15,7 +15,7 @@ const Kontaktskjema = () => {
       e.preventDefault();
       setError(false);
       setSuccess(false);
-      const navnRegex = "[A-Za-z\u00C0-\u017F\u0180-\u024F\u1E00-\u1EFFŠšŸÿ'-.]+";
+       const navnRegex = /[A-Za-z\u00C0-\u017F\u0180-\u024F\u1E00-\u1EFFŠšŸÿ'-.]+/;
       if (sending){ return; };
       if (!navnRef.current) {
          setError("Fyll inn navn");
