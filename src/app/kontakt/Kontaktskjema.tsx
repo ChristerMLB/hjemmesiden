@@ -22,7 +22,8 @@ const Kontaktskjema = () => {
          return;
       }
        if(!navnRef.current.value.match(navnRegex)){
-           setError("Det ser ut som det er noe som ikke stemmer helt med navnet du har skrevet inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)")
+           setError("Det ser ut som det er noe som ikke stemmer helt med navnet du har skrevet inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)");
+           return;
        }
       if (!epostRef.current) {
          setError("Fyll inn epostadressen din");
