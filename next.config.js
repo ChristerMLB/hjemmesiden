@@ -8,7 +8,7 @@ const nextConfig = {
                     
                     {
                         key: 'Content-Security-Policy',
-                        value: "default-src 'self' fonts.googleapis.com va.vercel-scripts.com 'unsafe-eval' 'unsafe-inline'; "
+                        value: "default-src 'self' fonts.googleapis.com va.vercel-scripts.com vitals.vercel-insights.com  'unsafe-eval' 'unsafe-inline'; "
                     },
                     {
                         key: 'X-Frame-Options',
