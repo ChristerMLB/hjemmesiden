@@ -5,9 +5,10 @@ const nextConfig = {
             {
                 source: '/(.*)',
                 headers: [
+                    
                     {
                         key: 'Content-Security-Policy',
-                        value: "default-src 'self' '*.fortelle.no' 'https://fortelle.no'; font-src 'self' 'https://fonts.googleapis.com';"
+                        value: "default-src 'self' fonts.googleapis.com va.vercel-scripts.com 'unsafe-eval' 'unsafe-inline'; "
                     },
                     {
                         key: 'X-Frame-Options',
@@ -29,6 +30,7 @@ const nextConfig = {
                         key: 'Permissions-Policy',
                         value: "Camera=(); battery=(); geolocation=(); microphone=()"
                     }
+
                 ]
             
             }

@@ -6,10 +6,11 @@ const bloggListe = async (req: NextApiRequest, res: NextApiResponse) => {
    try {
       const { forskyvning = 0 } = req.query;
       connection = await pool.promise().getConnection();
-      const [intro] = await connection.query(
+      const [bloggposter] = await connection.query(
          `SELECT * FROM fortelle2.bloggposter ORDER BY dato LIMIT 10 OFFSET ${forskyvning}`
       );
-      res.status(200).json(intro);
+       console.log("bloggposter:", bloggposter);
+      res.status(200).json(bloggposter);
    } catch (e) {
       res.status(500).json({ error: `En feil oppsto under oppslag i databasen: ${e}` });
       throw new Error(`En feil oppsto under oppslag i databasen: ${e}`);
