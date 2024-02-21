@@ -15,25 +15,31 @@ const Kontaktskjema = () => {
       e.preventDefault();
       setError(false);
       setSuccess(false);
-       const navnRegex = /[A-Za-z \u00C0-\u017F\u0180-\u024F\u1E00-\u1EFFŠšŸÿ'\-\.]+/;
-       const epostRegex = /^[æøåA-Z0-9_!#%&'*+/=?`{|}~^.-]+@[A-Z0-9.-]+$/gi;
-      if (sending){ return; };
+      const navnRegex = /[A-Za-z \u00C0-\u017F\u0180-\u024F\u1E00-\u1EFFŠšŸÿ'\-\.]+/;
+      const epostRegex = /^[æøåA-Z0-9_!#%&'*+/=?`{|}~^.-]+@[A-Z0-9.-]+$/gi;
+      if (sending) {
+         return;
+      }
       if (!navnRef.current) {
          setError("Fyll inn navn");
          return;
       }
-       if(!navnRef.current.value.match(navnRegex)){
-           setError("Det ser ut som det er noe som ikke stemmer helt med navnet du har skrevet inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)");
-           return;
-       }
+      if (!navnRef.current.value.match(navnRegex)) {
+         setError(
+            "Det ser ut som det er noe som ikke stemmer helt med navnet du har skrevet inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)"
+         );
+         return;
+      }
       if (!epostRef.current) {
          setError("Fyll inn epostadressen din");
          return;
       }
-       if(!epostRef.current.value.match(epostRegex)){
-           setError("Det ser ut som det er noe som ikke stemmer helt med epostadressen du har fylt inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)");
-           return;
-       }
+      if (!epostRef.current.value.match(epostRegex)) {
+         setError(
+            "Det ser ut som det er noe som ikke stemmer helt med epostadressen du har fylt inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)"
+         );
+         return;
+      }
       if (!meldingRef.current) {
          setError("Fyll inn melding");
          return;
@@ -68,9 +74,7 @@ const Kontaktskjema = () => {
             setSending(false);
          }
       } catch (e) {
-         setError(
-            `Fikk ikke sendt melding på grunn av en feil på serveren. Detaljer: ${e}`
-         );
+         setError(`Fikk ikke sendt melding på grunn av en feil på serveren. Detaljer: ${e}`);
          setSending(false);
          return;
       }
@@ -94,7 +98,12 @@ const Kontaktskjema = () => {
                   />
                   <label htmlFor="melding">Melding</label>
                   <textarea id="melding" name="melding" ref={meldingRef} required minLength={5} />
-                  {error ? <div className="error"><h3>Feil!</h3>{error}</div> : null}
+                  {error ? (
+                     <div className="error">
+                        <h3>Feil!</h3>
+                        {error}
+                     </div>
+                  ) : null}
                   {success ? <div className="success">{success}</div> : null}
                   <button type="submit">Send meldingen</button>
                </form>
