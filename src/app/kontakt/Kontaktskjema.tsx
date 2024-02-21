@@ -62,7 +62,6 @@ const Kontaktskjema = () => {
             setSending(false);
          } else {
             const errorData = await res.json();
-            console.log('errorData.error:', errorData.error[0]);
             setError(
                `Fikk ikke sendt melding på grunn av en feil på serveren. Detaljer: ${errorData.error}`
             );

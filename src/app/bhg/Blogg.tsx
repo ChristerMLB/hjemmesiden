@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BloggPost, BloggBrodTekst, SinglePost } from "@/types/Blogg";
+import { BloggPost, SinglePost } from "@/types/Blogg";
 import BlogCard from "./BlogCard";
 import BlogPost from "./BlogPost";
 
@@ -39,10 +39,9 @@ const Blogg = ({ post, page }: HomeProps) => {
          if (blogList && post) {
             const posten = blogList.find((p) => p.tittel === post);
             try {
-               const fetchedBlogBrod = await fetch(`/api/bloggbrod?id=${posten?.id}`).then((response) =>
-                  response.json()
+               const fetchedBlogBrod = await fetch(`/api/bloggbrod?id=${posten?.id}`).then(
+                  (response) => response.json()
                );
-               console.log(fetchedBlogBrod);
                const assembledSinglePost = {
                   id: posten?.id as number,
                   tittel: posten?.tittel as string,
@@ -51,7 +50,7 @@ const Blogg = ({ post, page }: HomeProps) => {
                   hovedbilde_alttext: posten?.hovedbilde_alttext as string,
                   brodtekst: fetchedBlogBrod[0].brodtekst as string,
                   ekstra: fetchedBlogBrod[0].ekstra as string,
-               }
+               };
                setBlogSingle(assembledSinglePost);
             } catch (e) {
                throw new Error(
@@ -69,11 +68,13 @@ const Blogg = ({ post, page }: HomeProps) => {
          {blogList && !post ? (
             blogList.map((post, i) =>
                // show the post preview if i is between (page * 10) and 10 + (page * 10) - so from 0 to 10 if page is 0.
-               i < 10 + page * 10 && i >= page * 10 ? <BlogCard post={post} key={`bloggpost-${post.id}`} /> : null
+               i < 10 + page * 10 && i >= page * 10 ? (
+                  <BlogCard post={post} key={`bloggpost-${post.id}`} />
+               ) : null
             )
-         ) : blogList && post ? 
+         ) : blogList && post ? (
             <BlogPost singlePost={blogSingle ? blogSingle : null} />
-         : (
+         ) : (
             <BlogCard post={loadingPost} />
          )}
       </div>
