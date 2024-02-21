@@ -42,6 +42,7 @@ const Blogg = ({ post, page }: HomeProps) => {
                const fetchedBlogBrod = await fetch(`/api/bloggbrod?id=${posten?.id}`).then((response) =>
                   response.json()
                );
+               console.log(fetchedBlogBrod);
                const assembledSinglePost = {
                   id: posten?.id as number,
                   tittel: posten?.tittel as string,
