@@ -9,7 +9,7 @@ const enkeltressurs = async (req: NextApiRequest, res: NextApiResponse) => {
    const escapedRessursId = parseInt(escape(ressursId as string));
    try {
       connection = await pool.promise().getConnection();
-      const [ressurs] = await connection.query(`SELECT * FROM fortelle2.ressurser WHERE id=${escapedRessursId}`);
+      const [ressurs] = await connection.query(`SELECT * FROM fortelle2.ressurser WHERE id=?`, [escapedRessursId]);
       res.status(200).json(ressurs);
    } catch (e) {
       res.status(500).json({ error: `En feil oppsto under oppslag i databasen: ${e}` });
