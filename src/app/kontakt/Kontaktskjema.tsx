@@ -62,14 +62,17 @@ const Kontaktskjema = () => {
             setSending(false);
          } else {
             const errorData = await res.json();
+            console.log('errorData.error:', errorData.error[0]);
             setError(
-               `Fikk ikke sendt melding på grunn av en feil på serveren. Detaljer: ${errorData.error}]]`
+               `Fikk ikke sendt melding på grunn av en feil på serveren. Detaljer: ${errorData.error}`
             );
+            setSending(false);
          }
       } catch (e) {
          setError(
             `Fikk ikke sendt melding på grunn av en feil på serveren. Detaljer: ${e}`
          );
+         setSending(false);
          return;
       }
    }
@@ -92,7 +95,7 @@ const Kontaktskjema = () => {
                   />
                   <label htmlFor="melding">Melding</label>
                   <textarea id="melding" name="melding" ref={meldingRef} required minLength={5} />
-                  {error ? <div className="error">{'<h3>Feil!</h3>'+error}</div> : null}
+                  {error ? <div className="error"><h3>Feil!</h3>{error}</div> : null}
                   {success ? <div className="success">{success}</div> : null}
                   <button type="submit">Send meldingen</button>
                </form>
