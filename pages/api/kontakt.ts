@@ -12,7 +12,18 @@ const limiter = rateLimit({
 const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
    limiter(req, res, async () => {
       if (req.method === "POST") {
-         const { navn, epost, melding } = req.body;
+         const { navn, epost, melding, honeypot, botCheck } = req.body;
+
+         if(honeypot){
+            res.status(400).json({ error: 'Vennligst ikke godta "terms and conditions", det er et skjult felt som bare er der for å lure bots :)' });
+            return; 
+         }
+
+         const botCheckFasit = [5, 'five', 'fem', 'funf', 'fünf'];
+         if(!botCheckFasit.includes(botCheck)) {
+            res.status(400).json({ error: 'serveren tror du er en bot, fordi du ikke skrev 5 eller fem i det siste feltet. Vennligst prøv igjen :)' });
+            return;
+         }
 
          if (validator.isEmpty(melding)) {
             res.status(400).json({ error: "vennligst skriv inn en melding." });

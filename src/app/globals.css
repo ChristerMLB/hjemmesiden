@@ -409,6 +409,10 @@ label{
     -moz-animation: AnimationName 2s ease infinite;
     animation: AnimationName 2s ease infinite;
 }
+/* honeypot */
+.TaC {
+   display: none;
+}
 
 @-webkit-keyframes AnimationName {
     0%{background-position:0% 50%}

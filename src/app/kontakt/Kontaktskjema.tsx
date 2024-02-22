@@ -6,6 +6,8 @@ const Kontaktskjema = () => {
    const navnRef = useRef<HTMLInputElement>(null);
    const epostRef = useRef<HTMLInputElement>(null);
    const meldingRef = useRef<HTMLTextAreaElement>(null);
+   const TaCref = useRef<HTMLInputElement>(null);
+   const botCheckRef = useRef<HTMLInputElement>(null);
 
    const [sending, setSending] = useState(false);
    const [error, setError] = useState<string | false>(false);
@@ -44,12 +46,20 @@ const Kontaktskjema = () => {
          setError("Fyll inn melding");
          return;
       }
+      if(!botCheckRef.current) {
+         setError("Fyll ut det siste feltet som sjekker at du er menneske.");
+         return;
+      }
       try {
          setSending(true);
 
          const navn = navnRef.current.value;
          const epost = epostRef.current.value;
          const melding = meldingRef.current.value;
+         const botCheck = botCheckRef.current.value;
+         const honeypot = TaCref.current?.checked;
+
+         console.log(TaCref.current?.checked);
 
          const res = await fetch("/api/kontakt", {
             method: "POST",
@@ -60,6 +70,8 @@ const Kontaktskjema = () => {
                navn: navn,
                epost: epost,
                melding: melding,
+               honeypot: honeypot,
+               botCheck: botCheck,
             }),
          });
 
@@ -86,7 +98,7 @@ const Kontaktskjema = () => {
             {!sending ? (
                <form className="kontaktskjema" onSubmit={sendMelding}>
                   <label htmlFor="name">Fullt navn</label>
-                  <input type="text" id="navn" name="navn" ref={navnRef} required minLength={5} />
+                  <input type="text" id="navn" name="navn" ref={navnRef} required minLength={5} maxLength={200} />
                   <label htmlFor="epost">Epostadresse</label>
                   <input
                      type="email"
@@ -97,7 +109,11 @@ const Kontaktskjema = () => {
                      minLength={5}
                   />
                   <label htmlFor="melding">Melding</label>
-                  <textarea id="melding" name="melding" ref={meldingRef} required minLength={5} />
+                  <textarea id="melding" name="melding" ref={meldingRef} required minLength={5} maxLength={3000} />
+                  <label htmlFor="botCheck">Enkel sjekk for om du er et menneske: hvis du har to epler og får tre til, hvor mange epler har du da?</label>
+                  <input type="text" name="botCheck" ref={botCheckRef} required maxLength={20}></input>
+                  <input type="checkbox" name="TaCcheck" className="TaC" ref={TaCref} />
+                  <label htmlFor="TaCcheck" className="TaC">I accept the terms and conditions</label>
                   {error ? (
                      <div className="error">
                         <h3>Feil!</h3>
