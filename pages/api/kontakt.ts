@@ -6,7 +6,10 @@ import rateLimit from "express-rate-limit";
 const limiter = rateLimit({
    windowMs: 10 * 60 * 1000, // ten minutes in ms
    max: 5,
-   message: { error: "serveren synes det ble for mange forespørsler, vent noen minutter før du prøver igjen."},
+   message: {
+      error: "serveren synes det ble for mange forespørsler, vent noen minutter før du prøver igjen.",
+   },
+   validate: { ip: false, trustProxy: false, xForwardedForHeader: false },
 });
 
 const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -14,17 +17,23 @@ const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
       if (req.method === "POST") {
          const { navn, epost, melding, honeypot, botCheck } = req.body;
 
-         if(honeypot){
-            res.status(400).json({ error: 'vennligst ikke godta "terms and conditions", det er et skjult felt som bare er der for å lure roboter :)' });
-            return; 
+         if (honeypot) {
+            res.status(400).json({
+               error: 'vennligst ikke godta "terms and conditions", det er et skjult felt som bare er der for å lure roboter :)',
+            });
+            return;
          }
-         const botCheckFasit = ['5', 'five', 'fem', 'funf', 'fünf', 'cinq'];
-         if(!botCheckFasit.includes(botCheck)) {
-            res.status(400).json({ error: 'serveren tror du er en robot fordi du ga feil svar i det siste feltet. Vennligst prøv igjen :)' });
+         const botCheckFasit = ["5", "five", "fem", "funf", "fünf", "cinq"];
+         if (!botCheckFasit.includes(botCheck)) {
+            res.status(400).json({
+               error: "serveren tror du er en robot fordi du ga feil svar i det siste feltet. Vennligst prøv igjen :)",
+            });
             return;
          }
          if (validator.isEmpty(melding)) {
-            res.status(400).json({ error: "serveren har ikke mottatt noe fra meldingsfeltet, vennligst prøv igjen." });
+            res.status(400).json({
+               error: "serveren har ikke mottatt noe fra meldingsfeltet, vennligst prøv igjen.",
+            });
          }
          if (!validator.isEmail(epost)) {
             res.status(400).json({
