@@ -57,16 +57,22 @@ const Bhg = ({}: HomeProps) => {
                   <Image
                      src={`/img/bhgressurser/${ressurs?.hovedbilde_url}`}
                      alt={ressurs ? ressurs?.hovedbilde_alttext : ""}
+                     width={500}
+                     height={500}
                   />
-                  <h1>{ressurs?.tittel}</h1>
                </div>
-               <p>{ressurs?.brodtekst}</p>
-               <p>
-                  <em>Hvis du bruker denne ressursen, vipps meg gjerne noen slanter på 91117305</em>
-               </p>
-               <p>
-                  <a href={`/ressurser/${ressurs?.filurl}`}>Last ned {ressurs?.tittel}</a>
-               </p>
+               <div className="enkeltressurstekst">
+                  <h1>{ressurs?.tittel}</h1>
+                  <p>{ressurs?.brodtekst}</p>
+                  <p>
+                     <em>
+                        Hvis du bruker denne ressursen, vipps meg gjerne noen slanter på 91117305
+                     </em>
+                  </p>
+                  <p>
+                     <a href={`/ressurser/${ressurs?.filurl}`}>Last ned {ressurs?.tittel}</a>
+                  </p>
+               </div>
             </div>
          </div>
       </>

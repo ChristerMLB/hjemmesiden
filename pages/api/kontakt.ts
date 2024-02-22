@@ -21,14 +21,12 @@ const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
             res.status(400).json({
                error: 'vennligst ikke godta "terms and conditions", det er et skjult felt som bare er der for å lure roboter :)',
             });
-            return;
          }
          const botCheckFasit = ["5", "five", "fem", "funf", "fünf", "cinq"];
          if (!botCheckFasit.includes(botCheck)) {
             res.status(400).json({
                error: "serveren tror du er en robot fordi du ga feil svar i det siste feltet. Vennligst prøv igjen :)",
             });
-            return;
          }
          if (validator.isEmpty(melding)) {
             res.status(400).json({
@@ -39,7 +37,6 @@ const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
             res.status(400).json({
                error: "serveren synes det ser ut som det er noe feil med epostadressen.",
             });
-            return;
          }
 
          const normalisertEpost = validator.normalizeEmail(epost);
@@ -69,7 +66,6 @@ const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
             res.status(400).json({
                error: `Fikk ikke sendt eposten, noe gikk galt: ${e}`,
             });
-            return;
          }
       } else {
          res.status(405).json({

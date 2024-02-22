@@ -11,7 +11,7 @@
    --bright: orangered;
    --secondary: #71cbf5;
    --corners: 0.1em;
-   --headerspace: 200px;
+   --headerspace: 155px;
 }
 
 *,
@@ -31,7 +31,7 @@ h1 {
    font-size: 2rem;
    font-weight: bold;
 }
-.overskrift{
+.overskrift {
    padding-top: var(--headerspace);
 }
 a {
@@ -237,6 +237,20 @@ aside {
    overflow-y: scroll;
 }
 
+/* Enkeltressurs */
+
+.enkeltressurs {
+   width: 100%;
+   margin-top: var(--headerspace);
+   background-color: var(--lightTransparent);
+   padding: var(--gap);
+   margin-bottom: var(--gap);
+   display: grid;
+   grid-template-columns: minmax(250px, 500px) minmax(500px, 600px);
+   align-items: center;
+   gap: var(--gap);
+}
+
 /* Header og nav */
 
 #header {
@@ -296,7 +310,6 @@ aside {
 .kontaktlink {
    padding: 20px !important;
 }
-
 
 /* forsiden med alle parallaxgreiene */
 
@@ -391,23 +404,26 @@ aside {
    grid-template-columns: 1fr;
    gap: var(--gap);
 }
-label{
-   line-height: .5em;
-   margin-top: .5em;
+label {
+   line-height: 1.5em;
+   margin-top: 0.5em;
+   margin-bottom: -0.5em;
 }
 .kontaktskjema input {
    height: 2em;
 }
-.kontaktskjema input, .kontaktskjema textarea{
+.kontaktskjema input,
+.kontaktskjema textarea {
    border-radius: var(--corners);
 }
-.dummyInput, .dummyTextarea{
+.dummyInput,
+.dummyTextarea {
    height: 2em;
-    background: linear-gradient(45deg, #ffffffff, #ffffff22);
-    background-size: 400% 400%;
-    -webkit-animation: AnimationName 2s ease infinite;
-    -moz-animation: AnimationName 2s ease infinite;
-    animation: AnimationName 2s ease infinite;
+   background: linear-gradient(45deg, #ffffffff, #ffffff22);
+   background-size: 400% 400%;
+   -webkit-animation: AnimationName 2s ease infinite;
+   -moz-animation: AnimationName 2s ease infinite;
+   animation: AnimationName 2s ease infinite;
 }
 /* honeypot */
 .TaC {
@@ -415,21 +431,39 @@ label{
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+   0% {
+      background-position: 0% 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
 }
 @-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+   0% {
+      background-position: 0% 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
 }
 @keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+   0% {
+      background-position: 0% 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
 }
-.dummyTextarea{
+.dummyTextarea {
    height: 40vh;
 }
 
@@ -439,28 +473,29 @@ label{
    margin-bottom: 1em;
    border-radius: var(--corners);
 }
-#melding{
+#melding {
    height: 40vh;
 }
-.error, .success{
+.error,
+.success {
    padding: var(--gap);
    border-radius: var(--corners) var(--corners) 0 0;
-   font-size: .8rem;
-   margin-bottom: -.7em;
+   font-size: 0.8rem;
+   margin-bottom: -0.7em;
 }
-.error{
+.error {
    background-color: #ff444444;
 }
-.success{
+.success {
    background-color: #88ff4444;
 }
-
 
 /* Storskjerm */
 
 @media (min-width: 1200px) {
    :root {
       --gap: 1em;
+      --headerspace: 200px;
    }
 
    .introBoks {
@@ -536,11 +571,21 @@ label{
    }
    #logoen {
       top: 105px;
+      margin-left: 53px;
       left: unset;
       transform: unset;
    }
-#mainNavContent {
-   justify-content: space-between;
-   margin-left: unset;
+   #mainNavContent {
+      justify-content: space-between;
+      margin-left: auto;
+   }
+}
+
+
+/* småskjerm */
+
+@media (max-width: 800px) {
+   .enkeltressurs {
+   grid-template-columns: auto;
 }
 }
