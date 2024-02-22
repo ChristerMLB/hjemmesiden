@@ -18,7 +18,6 @@ const Kontaktskjema = () => {
       setError(false);
       setSuccess(false);
       const navnRegex = /[A-Za-z \u00C0-\u017F\u0180-\u024F\u1E00-\u1EFFŠšŸÿ'\-\.]+/;
-      const epostRegex = /^[æøåA-Z0-9_!#%&'*+/=?`{|}~^.-]+@[A-Z0-9.-]+$/gi;
       if (sending) {
          return;
       }
@@ -34,12 +33,6 @@ const Kontaktskjema = () => {
       }
       if (!epostRef.current) {
          setError("Fyll inn epostadressen din");
-         return;
-      }
-      if (!epostRef.current.value.match(epostRegex)) {
-         setError(
-            "Det ser ut som det er noe som ikke stemmer helt med epostadressen du har fylt inn. Hvis det ikke er riktig, gi gjerne beskjed om det i eposten, så jeg kan få fikset regexen :)"
-         );
          return;
       }
       if (!meldingRef.current) {
@@ -110,7 +103,7 @@ const Kontaktskjema = () => {
                   />
                   <label htmlFor="melding">Melding</label>
                   <textarea id="melding" name="melding" ref={meldingRef} required minLength={5} maxLength={3000} />
-                  <label htmlFor="botCheck">Enkel sjekk for om du er et menneske: hvis du har to epler og får tre til, hvor mange epler har du da?</label>
+                  <label htmlFor="botCheck">Hvis du har to epler og får tre til, hvor mange epler har du da?</label>
                   <input type="text" name="botCheck" ref={botCheckRef} required maxLength={20}></input>
                   <input type="checkbox" name="TaCcheck" className="TaC" ref={TaCref} />
                   <label htmlFor="TaCcheck" className="TaC">I accept the terms and conditions</label>

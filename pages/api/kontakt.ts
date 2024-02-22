@@ -6,7 +6,7 @@ import rateLimit from "express-rate-limit";
 const limiter = rateLimit({
    windowMs: 10 * 60 * 1000, // ten minutes in ms
    max: 5,
-   message: { error: "for mange forespørsler, vent litt før du prøver igjen."},
+   message: { error: "serveren synes det ble for mange forespørsler, vent noen minutter før du prøver igjen."},
 });
 
 const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -15,28 +15,27 @@ const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
          const { navn, epost, melding, honeypot, botCheck } = req.body;
 
          if(honeypot){
-            res.status(400).json({ error: 'Vennligst ikke godta "terms and conditions", det er et skjult felt som bare er der for å lure bots :)' });
+            res.status(400).json({ error: 'vennligst ikke godta "terms and conditions", det er et skjult felt som bare er der for å lure roboter :)' });
             return; 
          }
-
-         const botCheckFasit = [5, 'five', 'fem', 'funf', 'fünf'];
+         const botCheckFasit = ['5', 'five', 'fem', 'funf', 'fünf', 'cinq'];
          if(!botCheckFasit.includes(botCheck)) {
-            res.status(400).json({ error: 'serveren tror du er en bot, fordi du ikke skrev 5 eller fem i det siste feltet. Vennligst prøv igjen :)' });
+            res.status(400).json({ error: 'serveren tror du er en robot fordi du ga feil svar i det siste feltet. Vennligst prøv igjen :)' });
             return;
          }
-
          if (validator.isEmpty(melding)) {
-            res.status(400).json({ error: "vennligst skriv inn en melding." });
+            res.status(400).json({ error: "serveren har ikke mottatt noe fra meldingsfeltet, vennligst prøv igjen." });
          }
          if (!validator.isEmail(epost)) {
             res.status(400).json({
-               error: "det ser ut som det er noe feil med epostadressen.",
+               error: "serveren synes det ser ut som det er noe feil med epostadressen.",
             });
             return;
          }
 
          const normalisertEpost = validator.normalizeEmail(epost);
          const sanitertMelding = validator.escape(melding);
+         const sanitertNavn = validator.escape(navn);
 
          try {
             const transporter = nodemailer.createTransport({
@@ -50,9 +49,9 @@ const sendEpost = async (req: NextApiRequest, res: NextApiResponse) => {
             });
 
             const info = await transporter.sendMail({
-               from: `"${navn}" <franettsiden@fortelle.no>`,
+               from: `"${sanitertNavn}" <franettsiden@fortelle.no>`,
                to: "franettsiden@fortelle.no",
-               subject: `epost fra nettsiden fra ${navn} (${normalisertEpost})`,
+               subject: `epost fra nettsiden fra ${sanitertNavn} (${normalisertEpost})`,
                text: `${sanitertMelding} \n\nsendt fra nettsiden, svar på ${normalisertEpost}`,
             });
 
