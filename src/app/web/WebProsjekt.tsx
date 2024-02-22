@@ -74,10 +74,28 @@ const WebProsjekt = ({ prosjekt }: WebProjectProps) => {
             </div>
 
             <div className="prosjektImg overflow-y-scroll">
-               <img
-                  src={`img/prosjektPreview/${prosjekt?.previewimg}`}
-                  alt={prosjekt?.previewimgalt}
-               />
+               {prosjekt?.url && prosjekt?.mobilvisning ? (
+                  <>
+                        <iframe
+                           id="mobilepreview"
+                           className="hideonsmallscreen"
+                           title={`mobilvisning av ${prosjekt?.navn}`}
+                           width="400"
+                           height="800"
+                           src={prosjekt?.url as string}
+                        ></iframe>
+                     <img
+                        src={`img/prosjektPreview/${prosjekt?.previewimg}`}
+                        alt={prosjekt?.previewimgalt}
+                        className="hideonbigscreen"
+                     />
+                  </>
+               ) : (
+                  <img
+                     src={`img/prosjektPreview/${prosjekt?.previewimg}`}
+                     alt={prosjekt?.previewimgalt}
+                  />
+               )}
             </div>
          </div>
       </div>

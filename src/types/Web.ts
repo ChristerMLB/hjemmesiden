@@ -11,5 +11,6 @@ export type WebProject = {
    url: string | null;
    gitHubUrl: string | null;
    old: boolean;
+   mobilvisning: boolean;
 };
 export type WebArray = WebProject[];

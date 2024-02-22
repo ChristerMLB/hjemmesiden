@@ -64,6 +64,7 @@ aside {
    max-width: 80em;
    display: grid;
 }
+.hideonsmallscreen { display: none; }
 
 /* bhg-wrapper */
 
@@ -212,6 +213,7 @@ aside {
 .teknologier p {
    display: flex;
    gap: 0.5em;
+   align-items: center;
 }
 
 /* Enkeltprosjekt */
@@ -579,6 +581,14 @@ label {
       justify-content: space-between;
       margin-left: auto;
    }
+   #mobilepreview {
+      margin: 70px auto 10px 50px;
+      border: #222 solid .5em;
+      border-radius: 1em;
+      transform: rotate(2deg);
+   }
+   .hideonsmallscreen { display: unset; }
+   .hideonbigscreen { display: none; }
 }
 
 
