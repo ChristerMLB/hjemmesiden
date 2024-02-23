@@ -30,7 +30,6 @@ html {
 h1 {
    font-size: 2rem;
    font-weight: bold;
-   margin: 2rem 0 2rem 0;
 }
 .overskrift {
    padding-top: var(--headerspace);
@@ -598,7 +597,7 @@ label {
       margin-top: var(--headerspace);
    }
    #logoen {
-      top: 105px;
+      top: 92px;
       margin-left: 53px;
       left: unset;
       transform: unset;
