@@ -1,5 +1,6 @@
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import KontaktKonvolutt from "./KontaktKonvolutt";
 
 type Props = {};
 
@@ -25,9 +26,7 @@ export const MainNav = ({}: Props) => {
                </ul>
                <ul>
                   <li>
-                     <a href='/kontakt' className="kontaktlink">
-                        <FontAwesomeIcon icon={faEnvelope} />
-                     </a>
+                    <KontaktKonvolutt />
                   </li>
                </ul>
             </div>

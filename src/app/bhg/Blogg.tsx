@@ -8,9 +8,9 @@ import BlogPost from "./BlogPost";
 type HomeProps = { post: string | null | undefined; page: number };
 
 const Blogg = ({ post, page }: HomeProps) => {
+   // throw new Error('TESTING!');
    const [blogList, setBlogList] = useState<BloggPost[] | null>(null);
    const [blogSingle, setBlogSingle] = useState<SinglePost | undefined>(undefined);
-
    const loadingPost = {
       id: 1,
       tittel: "Laster bloggposter",

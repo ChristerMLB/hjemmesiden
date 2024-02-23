@@ -99,7 +99,6 @@ aside {
 /* Ressursliste */
 
 .ressurslistewrapper {
-   margin-top: var(--headerspace);
    width: fit-content;
 }
 
@@ -311,9 +310,6 @@ aside {
 
    left: 50%;
    transform: translate(-50%, 0);
-}
-.kontaktlink {
-   padding: 20px !important;
 }
 
 /* forsiden med alle parallaxgreiene */
@@ -588,8 +584,11 @@ label {
       overflow-x: unset;
    }
    .blogwrapper {
-      margin-top: 240px;
+      margin-top: var(--headerspace);
       order: 0;
+   }
+   .bhgsidebarwrapper {
+      margin-top: var(--headerspace);
    }
    #logoen {
       top: 105px;
