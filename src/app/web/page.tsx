@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import type { WebArray, WebProject } from "@/types/Web";
 import MainNav from "@/components/MainNav";
-import WebProsjektKort from "./WebProsjektKort";
 import { useSearchParams } from "next/navigation";
 import WebProsjekt from "./WebProsjekt";
-import IntroBoks from "./IntroBoks";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import ErrorComponent from "@/components/ErrorComponent";
+import WebListe from "./WebListe";
 
 type HomeProps = {};
 
@@ -15,14 +16,16 @@ const Web = ({}: HomeProps) => {
    const [currentProject, setCurrentProject] = useState<WebProject | undefined>(undefined);
    const [showOld, setShowOld] = useState<boolean>(false);
    const prosjekt = useSearchParams()?.get("prosjekt");
+   const [error, setError] = useState<Error | null>(null);
 
    useEffect(() => {
       async function getWebArray() {
          try {
+            // throw new Error("TEST!");
             const fetchedWebArray = await fetch("api/web").then((response) => response.json());
             setWebArray(fetchedWebArray);
          } catch (e) {
-            throw new Error(`Fant ikke introteksten i databasen: ${e}`);
+            setError(Error(`Feil under oppslag i databasen. ${e}`));
          }
       }
       getWebArray();
@@ -38,39 +41,24 @@ const Web = ({}: HomeProps) => {
       <>
          <MainNav />
          <div className="wrapper">
-            <WebProsjekt prosjekt={currentProject} />
+            <ErrorBoundary errorComponent={ErrorComponent}>
+               <WebProsjekt prosjekt={currentProject} />
+            </ErrorBoundary>
          </div>
       </>
    ) : (
       <>
          <MainNav />
          <div className="wrapper">
-            {webArray ? (
-               <div className="prosjektListeWrapper">
-                  <IntroBoks intro={webArray[0]} />
-                  {webArray?.map((prosjekt, i) => {
-                     if (i > 0 && !prosjekt.old) {
-                        return <WebProsjektKort prosjekt={prosjekt} key={prosjekt.id} />;
-                     }
-                  })}
-               </div>
-            ) : null}
-
-            {showOld ? (
-               <div className="prosjektListeWrapper">
-                  {webArray?.map((prosjekt, i) => {
-                     if (i > 0 && prosjekt.old) {
-                        return <WebProsjektKort prosjekt={prosjekt} key={prosjekt.id} />;
-                     }
-                  })}
-               </div>
-            ) : webArray ? (
-               <div className="gamleProsjekterKnappWrapper">
-                  <button className="gamleProsjekterKnapp" onClick={() => setShowOld(true)}>
-                     Last inn eldre webprosjekter
-                  </button>
-               </div>
-            ) : null}
+            <div className="prosjektListeWrapper">
+               {error ? (
+                  <ErrorComponent error={error} reset={() => location.reload()} />
+               ) : (
+                  <ErrorBoundary errorComponent={ErrorComponent}>
+                     <WebListe webArray={webArray} showOld={showOld} setShowOld={setShowOld} />
+                  </ErrorBoundary>
+               )}
+            </div>
          </div>
       </>
    );

@@ -4,13 +4,15 @@ import { useEffect, useState } from "react";
 import { BloggPost, SinglePost } from "@/types/Blogg";
 import BlogCard from "./BlogCard";
 import BlogPost from "./BlogPost";
+import ErrorComponent from "@/components/ErrorComponent";
 
 type HomeProps = { post: string | null | undefined; page: number };
 
 const Blogg = ({ post, page }: HomeProps) => {
-   // throw new Error('TESTING!');
    const [blogList, setBlogList] = useState<BloggPost[] | null>(null);
    const [blogSingle, setBlogSingle] = useState<SinglePost | undefined>(undefined);
+   const [error, setError] = useState<Error | null>(null);
+
    const loadingPost = {
       id: 1,
       tittel: "Laster bloggposter",
@@ -23,12 +25,13 @@ const Blogg = ({ post, page }: HomeProps) => {
    useEffect(() => {
       async function getBlogPosts() {
          try {
+            // throw new Error('TESTING!');
             const fetchedBlogArray = await fetch("api/bloggposter").then((response) =>
                response.json()
             );
             setBlogList(fetchedBlogArray.reverse());
          } catch (e) {
-            throw new Error(`Fant ikke bloggpostene i databasen: ${e}`);
+            setError(Error(`Fant ikke bloggpostene i databasen: ${e}`));
          }
       }
       getBlogPosts();
@@ -53,8 +56,10 @@ const Blogg = ({ post, page }: HomeProps) => {
                };
                setBlogSingle(assembledSinglePost);
             } catch (e) {
-               throw new Error(
-                  `Fant ikke bloggposten, er adressen kanskje stavet feil? Nei ikke vet jeg, men det er ikke så mange bloggposter, så du kan sikkert finne den du leter etter hvis du blar deg frem <a href="/bhg">her</a>.<br>${e}`
+               setError(
+                  Error(
+                     `Fant ikke bloggposten, er adressen kanskje stavet feil? Nei ikke vet jeg, men det er ikke så mange bloggposter, så du kan sikkert finne den du leter etter hvis du blar deg frem <a href="/bhg">her</a>.<br>${e}`
+                  )
                );
             }
          }
@@ -65,6 +70,7 @@ const Blogg = ({ post, page }: HomeProps) => {
    return (
       <div className="blogwrapper">
          <h1>Barnehagegreier</h1>
+         {error && <ErrorComponent error={error} reset={() => location.reload()} />}
          {blogList && !post ? (
             blogList.map((post, i) =>
                // show the post preview if i is between (page * 10) and 10 + (page * 10) - so from 0 to 10 if page is 0.
@@ -75,7 +81,7 @@ const Blogg = ({ post, page }: HomeProps) => {
          ) : blogList && post ? (
             <BlogPost singlePost={blogSingle ? blogSingle : null} />
          ) : (
-            <BlogCard post={loadingPost} />
+            !error && <BlogCard post={loadingPost} />
          )}
       </div>
    );

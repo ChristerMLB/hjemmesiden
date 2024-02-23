@@ -132,6 +132,7 @@ aside {
 .enkeltProsjektWrapper {
    display: grid;
    gap: calc(var(--gap) * 4);
+   margin-top: var(--headerspace);
 }
 
 .introBoks {

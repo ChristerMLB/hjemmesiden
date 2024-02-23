@@ -23,7 +23,6 @@ const Bhg = ({}: HomeProps) => {
             </ErrorBoundary>
             <div className="bhgsidebarwrapper">
                <BhgOmMeg />
-
             <ErrorBoundary errorComponent={ErrorComponent}>
                <BhgRessurser />
             </ErrorBoundary>
