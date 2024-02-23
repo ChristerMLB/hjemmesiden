@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Parallax from "parallax-js";
 import MainNav from "@/components/MainNav";
+import Image from "next/image";
 
 export default function Home() {
    useEffect(() => {
@@ -28,6 +29,21 @@ export default function Home() {
          <MainNav />
          <div id="scene" className="overflow-clip">
             <div className="parallaxBackgroundParticles overflow-hidden" data-depth="0.1"></div>
+            <div className="parallaxsnakkeboble" data-depth="0.2">
+               <h1>Hei!</h1>
+               <p>Dette er hjemmesiden til Christer M.L. Bendixen. Den er for tiden</p>
+               <p className="flex gap-2 items-center">
+                  <Image
+                     src="/img/construction.gif"
+                     alt="under construction!"
+                     width={25}
+                     height={25}
+                     className="pixelatedImg"
+                  />
+                  <h2>UNDER CONSTRUCTION</h2>
+               </p>
+               <div className="snakkebobletut"></div>
+            </div>
             <div className="parallaxMeg overflow-hidden" data-depth="0.2">
                <div className="parallaxGooglyEyes">
                   <div id="leftEyeScene" className="parallaxLeye parallaxEye">

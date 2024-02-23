@@ -65,6 +65,9 @@ aside {
    display: grid;
 }
 .hideonsmallscreen { display: none; }
+.pixelatedImg {
+   image-rendering: pixelated;
+}
 
 /* bhg-wrapper */
 
@@ -301,7 +304,7 @@ aside {
    background-color: transparent;
    position: absolute;
    z-index: 99999;
-   top: 35px;
+   top: 55px;
    margin: -13px auto 0 auto;
    width: 110px;
    height: auto;
@@ -398,6 +401,23 @@ aside {
    width: 53px;
    clip-path: circle(50% at 50% 50%);
 }
+.parallaxsnakkeboble {
+   width: 345px;
+   margin-top: calc(100vh - 600px);
+   margin-left: calc(50vw - 170px);
+   border-radius: 3em;
+   background-color: var(--lightTransparent);
+   padding: 1.5em;
+}
+.snakkebobletut {
+   width: 30px;
+   height: 20px;
+   position: absolute;
+   background-color: var(--lightTransparent);
+   margin-left: 228px;
+   margin-top: 26.4px;
+   border-radius: 0 0 100% var(--corners);
+}
 
 /* kontaktskjema */
 
@@ -427,10 +447,37 @@ label {
    -moz-animation: AnimationName 2s ease infinite;
    animation: AnimationName 2s ease infinite;
 }
+.dummyTextarea {
+   height: 40vh;
+}
+
+.kontaktskjema button {
+   background-color: black;
+   color: white;
+   margin-bottom: 1em;
+   border-radius: var(--corners);
+}
+#melding {
+   height: 40vh;
+}
+.error,
+.success {
+   padding: var(--gap);
+   border-radius: var(--corners) var(--corners) 0 0;
+   font-size: 0.8rem;
+   margin-bottom: -0.7em;
+}
+.error {
+   background-color: #ff444444;
+}
+.success {
+   background-color: #88ff4444;
+}
 /* honeypot */
 .TaC {
    display: none;
 }
+
 
 @-webkit-keyframes AnimationName {
    0% {
@@ -465,33 +512,6 @@ label {
       background-position: 0% 50%;
    }
 }
-.dummyTextarea {
-   height: 40vh;
-}
-
-.kontaktskjema button {
-   background-color: black;
-   color: white;
-   margin-bottom: 1em;
-   border-radius: var(--corners);
-}
-#melding {
-   height: 40vh;
-}
-.error,
-.success {
-   padding: var(--gap);
-   border-radius: var(--corners) var(--corners) 0 0;
-   font-size: 0.8rem;
-   margin-bottom: -0.7em;
-}
-.error {
-   background-color: #ff444444;
-}
-.success {
-   background-color: #88ff4444;
-}
-
 /* Storskjerm */
 
 @media (min-width: 1200px) {
