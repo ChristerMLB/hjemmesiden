@@ -30,6 +30,7 @@ html {
 h1 {
    font-size: 2rem;
    font-weight: bold;
+   margin: 2rem 0 2rem 0;
 }
 .overskrift {
    padding-top: var(--headerspace);
@@ -64,6 +65,11 @@ aside {
    max-width: 80em;
    display: grid;
 }
+.kontaktkonvolutt{
+   padding: 2em .3em 2em .5em !important;
+}
+
+/* utility classes */
 .hideonsmallscreen { display: none; }
 .pixelatedImg {
    image-rendering: pixelated;
@@ -89,6 +95,7 @@ aside {
    margin: calc(var(--gap) * 2) var(--gap);
 }
 .blogwrapper {
+   margin-top: var(--headerspace);
    background-color: var(--lightTransparent);
    display: grid;
    justify-items: center;
@@ -154,7 +161,7 @@ aside {
    justify-content: center;
 }
 .gamleProsjekterKnapp {
-   margin: 20vh var(--gap);
+   margin: 5vh auto 20vh auto;
    color: white;
    font-size: 2rem;
    padding: 1em;
@@ -304,11 +311,10 @@ aside {
    background-color: transparent;
    position: absolute;
    z-index: 99999;
-   top: 55px;
-   margin: -13px auto 0 auto;
+   top: 30px;
+   margin:   auto 0 auto;
    width: 110px;
    height: auto;
-
    left: 50%;
    transform: translate(-50%, 0);
 }

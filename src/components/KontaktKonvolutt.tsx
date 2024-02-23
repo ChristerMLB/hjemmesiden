@@ -3,12 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const KontaktKonvolutt = () => {
     return (
-        <>
-            &nbsp;
-                   <a href="/kontakt">
+                   <a href="/kontakt" className="kontaktkonvolutt">
                       <FontAwesomeIcon icon={faEnvelope} />
                    </a>
-        </>
     )
 }
 

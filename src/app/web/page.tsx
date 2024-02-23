@@ -9,9 +9,9 @@ import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import ErrorComponent from "@/components/ErrorComponent";
 import WebListe from "./WebListe";
 
-type HomeProps = {};
+type WebProps = {};
 
-const Web = ({}: HomeProps) => {
+const Web = ({}: WebProps) => {
    const [webArray, setWebArray] = useState<WebArray | null>(null);
    const [currentProject, setCurrentProject] = useState<WebProject | undefined>(undefined);
    const [showOld, setShowOld] = useState<boolean>(false);
@@ -41,9 +41,11 @@ const Web = ({}: HomeProps) => {
       <>
          <MainNav />
          <div className="wrapper">
-            <ErrorBoundary errorComponent={ErrorComponent}>
-               <WebProsjekt prosjekt={currentProject} />
-            </ErrorBoundary>
+            <div className="enkeltProsjektWrapper">
+               <ErrorBoundary errorComponent={ErrorComponent}>
+                  <WebProsjekt prosjekt={currentProject} />
+               </ErrorBoundary>
+            </div>
          </div>
       </>
    ) : (
