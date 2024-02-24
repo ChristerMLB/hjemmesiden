@@ -1,11 +1,9 @@
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import KontaktKonvolutt from "./KontaktKonvolutt";
 
-type Props = {};
+type Props = {setKontaktModal: React.Dispatch<React.SetStateAction<boolean>>;
+   kontaktModal: Boolean;};
 
-export const MainNav = ({}: Props) => {
-
+export const MainNav = ({setKontaktModal, kontaktModal}: Props) => {
    return (
       <header id="header">
          <nav id="mainNav">
@@ -26,7 +24,10 @@ export const MainNav = ({}: Props) => {
                </ul>
                <ul>
                   <li>
-                    <KontaktKonvolutt />
+                     <KontaktKonvolutt
+                        setKontaktModal={setKontaktModal}
+                        kontaktModal={kontaktModal}
+                     />
                   </li>
                </ul>
             </div>

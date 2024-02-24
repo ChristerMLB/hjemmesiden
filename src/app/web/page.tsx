@@ -8,6 +8,7 @@ import WebProsjekt from "./WebProsjekt";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import ErrorComponent from "@/components/ErrorComponent";
 import WebListe from "./WebListe";
+import Kontaktskjema from "../kontakt/Kontaktskjema";
 
 type WebProps = {};
 
@@ -17,6 +18,7 @@ const Web = ({}: WebProps) => {
    const [showOld, setShowOld] = useState<boolean>(false);
    const prosjekt = useSearchParams()?.get("prosjekt");
    const [error, setError] = useState<Error | null>(null);
+   const [kontaktModal, setKontaktModal] = useState<boolean>(false);
 
    useEffect(() => {
       async function getWebArray() {
@@ -39,7 +41,8 @@ const Web = ({}: WebProps) => {
 
    return currentProject ? (
       <>
-         <MainNav />
+         <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
          <div className="wrapper">
             <div className="enkeltProsjektWrapper">
                <ErrorBoundary errorComponent={ErrorComponent}>
@@ -50,7 +53,8 @@ const Web = ({}: WebProps) => {
       </>
    ) : (
       <>
-         <MainNav />
+         <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
          <div className="wrapper">
             <div className="prosjektListeWrapper">
                {error ? (

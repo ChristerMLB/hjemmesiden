@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Parallax from "parallax-js";
 import MainNav from "@/components/MainNav";
-import Image from "next/image";
+import ParallaxSnakkeboble from "@/app/ParallaxSnakkeboble";
+import Kontaktskjema from "./kontakt/Kontaktskjema";
 
 export default function Home() {
+   const [kontaktModal, setKontaktModal] = useState<boolean>(false);
    useEffect(() => {
       var scene = document.getElementById("scene") as HTMLElement;
       var leftEyeScene = document.getElementById("leftEyeScene") as HTMLElement;
@@ -23,27 +25,15 @@ export default function Home() {
          limitX: 7,
          limitY: 7,
       });
+      console.log(scene.innerHTML);
    }, []);
    return (
       <>
-         <MainNav />
+         <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
          <div id="scene" className="overflow-clip">
             <div className="parallaxBackgroundParticles overflow-hidden" data-depth="0.1"></div>
-            <div className="parallaxsnakkeboble" data-depth="0.2">
-               <h1>Hei!</h1>
-               <p>Dette er hjemmesiden til Christer M.L. Bendixen. Den er for tiden</p>
-               <p className="flex gap-2 items-center">
-                  <Image
-                     src="/img/construction.gif"
-                     alt="under construction!"
-                     width={25}
-                     height={25}
-                     className="pixelatedImg"
-                  />
-                  <h2>UNDER CONSTRUCTION</h2>
-               </p>
-               <div className="snakkebobletut"></div>
-            </div>
+            <ParallaxSnakkeboble />
             <div className="parallaxMeg overflow-hidden" data-depth="0.2">
                <div className="parallaxGooglyEyes">
                   <div id="leftEyeScene" className="parallaxLeye parallaxEye">
@@ -55,17 +45,6 @@ export default function Home() {
                </div>
             </div>
             <div className="parallaxForgrunn1 overflow-hidden" data-depth="0.4"></div>
-            {/* <div className='parallaxForgrunn2 overflow-hidden' data-depth='0.4'>
-          <div className='parallaxFrontPageLinks'>
-            <button type='button' className='parallaxFrontPageLink'>
-              barnehagegreier
-            </button>
-            <button type='button' className='parallaxFrontPageLink'>
-              webutvikling
-            </button>
-          </div>
-        </div> */}
-
             <div className="parallaxForgrunn3 overflow-hidden" data-depth="0.8"></div>
          </div>
       </>

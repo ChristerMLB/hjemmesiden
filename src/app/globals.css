@@ -11,7 +11,7 @@
    --bright: orangered;
    --secondary: #71cbf5;
    --corners: 0.1em;
-   --headerspace: 155px;
+   --headerspace: 160px;
 }
 
 *,
@@ -55,6 +55,15 @@ p {
    font-size: 0.9rem;
    margin: 0.5rem 0;
 }
+button {
+   background-color: var(--black);
+   color: white;
+   border-radius: var(--corners);
+}
+button:hover{
+   background-color: var(--secondary) !important;
+   color: var(--black) !important;
+}
 aside {
    font-size: 0.7rem;
 }
@@ -64,12 +73,14 @@ aside {
    max-width: 80em;
    display: grid;
 }
-.kontaktkonvolutt{
-   padding: 2em .3em 2em .5em !important;
+.kontaktkonvolutt {
+   padding: 2em 0.3em 2em 0.5em !important;
 }
 
 /* utility classes */
-.hideonsmallscreen { display: none; }
+.hideonsmallscreen {
+   display: none;
+}
 .pixelatedImg {
    image-rendering: pixelated;
 }
@@ -100,6 +111,17 @@ aside {
    justify-items: center;
    gap: var(--gap);
    padding-bottom: calc(var(--gap) * 4);
+}
+
+/* bhg sidebar */
+.bhgommeg {
+   background-color: var(--lightTransparent);
+   padding: var(--gap);
+}
+.bhgsidebarwrapper {
+   display: flex;
+   flex-direction: column;
+   gap: var(--gap);
 }
 
 /* Ressursliste */
@@ -311,7 +333,7 @@ aside {
    position: absolute;
    z-index: 99999;
    top: 30px;
-   margin:   auto 0 auto;
+   margin: auto 0 auto;
    width: 110px;
    height: auto;
    left: 50%;
@@ -423,10 +445,22 @@ aside {
 
 /* kontaktskjema */
 
+.kontaktwrapper {
+   z-index: 999999;
+   position: fixed;
+   margin: calc(var(--headerspace) + 5vh) 0 0 calc(50% - 22ch);
+   width: 92vw;
+   max-width: 90ch;
+}
 .kontaktskjema {
    display: grid;
    grid-template-columns: 1fr;
    gap: var(--gap);
+   background-color: var(--lightTransparent);
+   backdrop-filter: blur(10px);
+   padding: var(--gap);
+   position: absolute;
+   border-radius: var(--corners);
 }
 label {
    line-height: 1.5em;
@@ -450,17 +484,27 @@ label {
    animation: AnimationName 2s ease infinite;
 }
 .dummyTextarea {
-   height: 40vh;
+   height: 15vh;
 }
-
+.kontaktskjemaknapperwrapper{
+   display: flex;
+   gap: var(--gap);
+   justify-content: space-between;
+   flex-grow: 1;
+   padding: var(--gap) 0;
+}
 .kontaktskjema button {
    background-color: black;
    color: white;
-   margin-bottom: 1em;
    border-radius: var(--corners);
+   flex-grow: 1;
+   padding: var(--gap);
+}
+.kontaktskjemalukkeknapp {
+   background-color: var(--shadowOnTransparent) !important;
 }
 #melding {
-   height: 40vh;
+   height: 15vh;
 }
 .error,
 .success {
@@ -479,7 +523,6 @@ label {
 .TaC {
    display: none;
 }
-
 
 @-webkit-keyframes AnimationName {
    0% {
@@ -608,19 +651,25 @@ label {
    }
    #mobilepreview {
       margin: 70px auto 10px 50px;
-      border: #222 solid .5em;
+      border: #222 solid 0.5em;
       border-radius: 1em;
       transform: rotate(2deg);
    }
-   .hideonsmallscreen { display: unset; }
-   .hideonbigscreen { display: none; }
+   .hideonsmallscreen {
+      display: unset;
+   }
+   .hideonbigscreen {
+      display: none;
+   }
 }
-
 
 /* småskjerm */
 
 @media (max-width: 800px) {
    .enkeltressurs {
-   grid-template-columns: auto;
-}
+      grid-template-columns: auto;
+   }
+   .kontaktwrapper{
+      margin: calc(var(--headerspace) + 5vh) 4vw 0 4vw;
+   }
 }

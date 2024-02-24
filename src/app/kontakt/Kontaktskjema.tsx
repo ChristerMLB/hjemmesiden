@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useRef } from "react";
-
-const Kontaktskjema = () => {
+interface KontaktSkjemaTypes {
+   setKontaktModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Kontaktskjema = ({setKontaktModal}:KontaktSkjemaTypes) => {
    const navnRef = useRef<HTMLInputElement>(null);
    const epostRef = useRef<HTMLInputElement>(null);
    const meldingRef = useRef<HTMLTextAreaElement>(null);
@@ -39,7 +41,7 @@ const Kontaktskjema = () => {
          setError("Fyll inn melding");
          return;
       }
-      if(!botCheckRef.current) {
+      if (!botCheckRef.current) {
          setError("Fyll ut det siste feltet som sjekker at du er menneske.");
          return;
       }
@@ -86,12 +88,19 @@ const Kontaktskjema = () => {
    }
 
    return (
-      <>
-         <div className="wrapper">
+         <div className="wrapper kontaktwrapper" data-depth="0.1">
             {!sending ? (
                <form className="kontaktskjema" onSubmit={sendMelding}>
                   <label htmlFor="name">Fullt navn</label>
-                  <input type="text" id="navn" name="navn" ref={navnRef} required minLength={5} maxLength={200} />
+                  <input
+                     type="text"
+                     id="navn"
+                     name="navn"
+                     ref={navnRef}
+                     required
+                     minLength={5}
+                     maxLength={200}
+                  />
                   <label htmlFor="epost">Epostadresse</label>
                   <input
                      type="email"
@@ -102,11 +111,28 @@ const Kontaktskjema = () => {
                      minLength={5}
                   />
                   <label htmlFor="melding">Melding</label>
-                  <textarea id="melding" name="melding" ref={meldingRef} required minLength={5} maxLength={3000} />
-                  <label htmlFor="botCheck">Hvis du har to epler og får tre til, hvor mange epler har du da?</label>
-                  <input type="text" name="botCheck" ref={botCheckRef} required maxLength={20}></input>
+                  <textarea
+                     id="melding"
+                     name="melding"
+                     ref={meldingRef}
+                     required
+                     minLength={5}
+                     maxLength={3000}
+                  />
+                  <label htmlFor="botCheck">
+                     Hvis du har to epler og får tre til, hvor mange epler har du da?
+                  </label>
+                  <input
+                     type="text"
+                     name="botCheck"
+                     ref={botCheckRef}
+                     required
+                     maxLength={20}
+                  ></input>
                   <input type="checkbox" name="TaCcheck" className="TaC" ref={TaCref} />
-                  <label htmlFor="TaCcheck" className="TaC">I accept the terms and conditions</label>
+                  <label htmlFor="TaCcheck" className="TaC">
+                     I accept the terms and conditions
+                  </label>
                   {error ? (
                      <div className="error">
                         <h3>Feil!</h3>
@@ -114,7 +140,10 @@ const Kontaktskjema = () => {
                      </div>
                   ) : null}
                   {success ? <div className="success">{success}</div> : null}
-                  <button type="submit">Send meldingen</button>
+<span className="kontaktskjemaknapperwrapper">
+                     <button type="submit">Send meldingen</button>
+                     <button onClick={()=>setKontaktModal(false)} className="kontaktskjemalukkeknapp">Lukk skjemaet</button>
+</span>
                </form>
             ) : (
                <div className="kontaktskjema sendeSnurr">
@@ -125,10 +154,10 @@ const Kontaktskjema = () => {
                   <label>Melding</label>
                   <div className="dummyTextarea"></div>
                   <button disabled>Sender meldingen...</button>
+                  <button disabled>...</button>
                </div>
             )}
          </div>
-      </>
    );
 };
 

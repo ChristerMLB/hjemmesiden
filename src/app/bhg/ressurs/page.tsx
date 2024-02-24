@@ -1,5 +1,6 @@
 "use client";
 
+import Kontaktskjema from "@/app/kontakt/Kontaktskjema";
 import MainNav from "@/components/MainNav";
 import { EnkeltRessurs, RessursKort } from "@/types/Ressurser";
 import Image from "next/image";
@@ -11,7 +12,7 @@ type HomeProps = {};
 const Bhg = ({}: HomeProps) => {
    const ressursId: number = parseInt(useSearchParams()?.get("id") as string);
    const [ressurs, setRessurs] = useState<EnkeltRessurs | null>(null);
-
+   const [kontaktModal, setKontaktModal] = useState<boolean>(false);
    useEffect(() => {
       async function getRessurs() {
          try {
@@ -50,7 +51,8 @@ const Bhg = ({}: HomeProps) => {
 
    return (
       <>
-         <MainNav />
+         <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
          <div className="wrapper">
             <div className="enkeltressurs">
                <div className="enkeltressursheader">
