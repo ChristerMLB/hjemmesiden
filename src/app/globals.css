@@ -361,7 +361,8 @@ aside {
    background-size: 800px;
    background-repeat: no-repeat;
    background-position: bottom center;
-   width: 100vw;
+   margin-left: -20vw;
+   width: 140vw;
    height: 110vh;
 }
 .parallaxForgrunn2 {
@@ -462,6 +463,7 @@ aside {
    padding: var(--gap);
    position: absolute;
    border-radius: var(--corners);
+   border: 1px white solid;
    max-height: calc(95vh - var(--headerspace));
    overflow: scroll;
 }
@@ -476,6 +478,7 @@ label {
 .kontaktskjema input,
 .kontaktskjema textarea {
    border-radius: var(--corners);
+   border: 1px var(--black) solid;
 }
 .dummyInput,
 .dummyTextarea {
@@ -523,6 +526,24 @@ label {
 /* honeypot */
 .TaC {
    display: none;
+}
+/* footer */
+footer {
+   padding: 4em;
+   background-color: var(--shadowOnTransparent);
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: var(--gap);
+}
+.footerseksjon{
+   background-color: var(--lightTransparent);
+   padding: var(--gap);
+   display: grid;
+   grid-template-columns: auto 1fr;
+   place-items: end;
+}
+.footerseksjon img{
+   margin-bottom: calc(0px - var(--gap));
 }
 
 @-webkit-keyframes AnimationName {
