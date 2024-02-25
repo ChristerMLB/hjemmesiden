@@ -449,7 +449,7 @@ aside {
    z-index: 999999;
    position: fixed;
    margin: calc(var(--headerspace) + 5vh) 0 0 calc(50% - 22ch);
-   width: 92vw;
+   width: calc(100vw - var(--gap) - var(--gap));
    max-width: 90ch;
 }
 .kontaktskjema {
@@ -461,6 +461,8 @@ aside {
    padding: var(--gap);
    position: absolute;
    border-radius: var(--corners);
+   max-height: calc(95vh - var(--headerspace));
+   overflow: scroll;
 }
 label {
    line-height: 1.5em;
@@ -670,6 +672,6 @@ label {
       grid-template-columns: auto;
    }
    .kontaktwrapper{
-      margin: calc(var(--headerspace) + 5vh) 4vw 0 4vw;
+      margin: calc(var(--headerspace) + 5vh) var(--gap) 0 var(--gap);
    }
 }
