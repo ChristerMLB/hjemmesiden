@@ -358,7 +358,7 @@ aside {
 }
 .parallaxMeg {
    background-image: url(../../public/img/christer.png);
-   background-size: 800px;
+   background-size: 600px;
    background-repeat: no-repeat;
    background-position: bottom center;
    margin-left: -20vw;
@@ -406,30 +406,30 @@ aside {
 .parallaxGooglyEyes {
    width: 100%;
    height: 100%;
-   margin-left: calc(50% - 75px);
+   margin-left: calc(50% - 55px);
    display: flex;
    align-items: flex-end;
-   gap: 30px;
+   gap: 25px;
 }
 .parallaxEye {
    background-color: #ddeeff;
-   height: 60px;
-   width: 60px;
+   height: 45px;
+   width: 45px;
    clip-path: circle(50% at 50% 50%);
-   margin-bottom: 290px;
+   margin-bottom: 210px;
 }
 .parallaxLeye {
-   margin-bottom: 300px;
+   margin-bottom: 220px;
 }
 .parallaxPupil {
    background-color: #110022;
-   height: 53px;
-   width: 53px;
+   height: 45px;
+   width: 45px;
    clip-path: circle(50% at 50% 50%);
 }
 .parallaxsnakkeboble {
    width: 345px;
-   margin-top: calc(100vh - 600px);
+   margin-top: calc(100vh - 500px);
    margin-left: calc(50vw - 170px);
    border-radius: 3em;
    background-color: var(--lightTransparent);
@@ -586,6 +586,48 @@ footer {
       --gap: 1em;
       --headerspace: 200px;
    }
+.parallaxsnakkeboble {
+   width: 345px;
+   margin-top: calc(100vh - 400px);
+   margin-left: calc(50vw + 90px);
+}
+.snakkebobletut {
+   width: 30px;
+   height: 30px;
+   position: absolute;
+   margin-left: 28px;
+   margin-top: 26.4px;
+   border-radius: 0 0 100% var(--corners);
+}
+
+.parallaxMeg {
+   background-size: 800px;
+   margin-left: -25vw;
+}
+.parallaxGooglyEyes {
+   width: 100%;
+   height: 100%;
+   margin-left: calc(50% - 75px);
+   display: flex;
+   align-items: flex-end;
+   gap: 30px;
+}
+.parallaxEye {
+   background-color: #ddeeff;
+   height: 60px;
+   width: 60px;
+   clip-path: circle(50% at 50% 50%);
+   margin-bottom: 290px;
+}
+.parallaxLeye {
+   margin-bottom: 300px;
+}
+.parallaxPupil {
+   background-color: #110022;
+   height: 50px;
+   width: 50px;
+   clip-path: circle(50% at 50% 50%);
+}
 
    .introBoks {
       margin: calc(var(--gap) * 5) 0 calc(var(--gap) * 10) 0;
