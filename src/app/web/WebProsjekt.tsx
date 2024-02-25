@@ -29,7 +29,7 @@ const WebProsjekt = ({ prosjekt }: WebProjectProps) => {
                      </div>
                   ) : null}
                </p>
-               <p>
+               <div className="webprosjektknappewrapper">
                   {prosjekt?.url ? (
                      <a href={prosjekt?.url}>
                         <button className="besokeKnapp">
@@ -49,7 +49,7 @@ const WebProsjekt = ({ prosjekt }: WebProjectProps) => {
                         <FontAwesomeIcon icon={faArrowLeft} /> til prosjektlisten
                      </button>
                   </a>
-               </p>
+               </div>
             </div>
             <div className="teknologier">
                <p>

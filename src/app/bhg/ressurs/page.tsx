@@ -6,6 +6,8 @@ import { EnkeltRessurs, RessursKort } from "@/types/Ressurser";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { faDownload, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type HomeProps = {};
 
@@ -71,9 +73,21 @@ const Bhg = ({}: HomeProps) => {
                         Hvis du bruker denne ressursen, vipps meg gjerne noen slanter på 91117305
                      </em>
                   </p>
-                  <p>
-                     <a href={`/ressurser/${ressurs?.filurl}`}>Last ned {ressurs?.tittel}</a>
-                  </p>
+                  <div className="barnehageressursknappewrapper">
+                     <a href={`/ressurser/${ressurs?.filurl}`}>
+                        <button>
+                           {" "}
+                           <FontAwesomeIcon icon={faDownload} /> Last ned {ressurs?.tittel}
+                        </button>
+                     </a>
+                     <a href={`/bhg`}>
+                        <button>
+                           {" "}
+                           <FontAwesomeIcon icon={faArrowLeft} />
+                           Tilbake
+                        </button>
+                     </a>
+                  </div>
                </div>
             </div>
          </div>

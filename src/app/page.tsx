@@ -15,23 +15,26 @@ export default function Home() {
       var parallaxInstance = new Parallax(scene, {
          relativeInput: true,
       });
+
       var parallaxInstance2 = new Parallax(leftEyeScene, {
          relativeInput: true,
          limitX: 7,
          limitY: 7,
       });
+
       var parallaxInstance3 = new Parallax(rightEyeScene, {
          relativeInput: true,
          limitX: 7,
          limitY: 7,
       });
-      console.log(scene.innerHTML);
+
+      document.body.style.overflow = "hidden";
    }, []);
    return (
       <>
          <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
          {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
-         <div id="scene" className="overflow-clip">
+         <div id="scene" className="overflow-hidden">
             <div className="parallaxBackgroundParticles overflow-hidden" data-depth="0.1"></div>
             <ParallaxSnakkeboble />
             <div className="parallaxMeg overflow-hidden" data-depth="0.2">

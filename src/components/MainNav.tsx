@@ -12,7 +12,7 @@ export const MainNav = ({setKontaktModal, kontaktModal}: Props) => {
                   <img src="/img/logoen.png" alt="logo med teksten 'fortelle'" id="logoen" />
                </a>
                <ul>
-                  ☙
+                  <li>☙</li>
                   <li>
                      <a href="/bhg">barnehagegreier</a>
                   </li>
@@ -20,7 +20,8 @@ export const MainNav = ({setKontaktModal, kontaktModal}: Props) => {
                   <li>
                      <a href="/web">webutvikling</a>
                   </li>
-                  <li>❧</li>
+                  <li className="hideonbigscreen">•</li>
+                  <li className="mirror-x hideonsmallscreen">☙</li>
                </ul>
                <ul>
                   <li>
@@ -29,6 +30,7 @@ export const MainNav = ({setKontaktModal, kontaktModal}: Props) => {
                         kontaktModal={kontaktModal}
                      />
                   </li>
+                  <li className="mirror-x hideonbigscreen">☙</li>
                </ul>
             </div>
          </nav>
