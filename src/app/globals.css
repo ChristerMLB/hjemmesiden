@@ -172,7 +172,6 @@ aside {
 .introBoks {
    margin: 0 var(--gap);
    padding: var(--gap);
-   padding-top: var(--headerspace);
    color: var(--black);
    border-radius: var(--corners);
    background-color: #ffffff88;
@@ -465,7 +464,7 @@ aside {
    border-radius: var(--corners);
    border: 1px white solid;
    max-height: calc(95vh - var(--headerspace));
-   overflow: scroll;
+   overflow-y: scroll;
 }
 label {
    line-height: 1.5em;
