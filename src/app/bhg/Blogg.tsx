@@ -52,7 +52,7 @@ const Blogg = ({ post, page }: HomeProps) => {
                   hovedbilde_url: posten?.hovedbilde_url as string,
                   hovedbilde_alttext: posten?.hovedbilde_alttext as string,
                   brodtekst: fetchedBlogBrod[0].brodtekst as string,
-                  ekstra: fetchedBlogBrod[0].ekstra as string,
+                  ekstra: fetchedBlogBrod[0].ekstra as string || "",
                };
                setBlogSingle(assembledSinglePost);
             } catch (e) {
