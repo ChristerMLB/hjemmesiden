@@ -8,7 +8,7 @@ interface BhgOmMegTypes {
 const BhgOmMeg = ({setKontaktModal, kontaktModal}:BhgOmMegTypes) => {
    return (
       <aside className="ressurslistewrapper bhgommeg">
-         <h2>Om meg</h2>
+         <h3>Om meg</h3>
          <p>
             Hei, jeg er en barnehagelærer som også driver med webutvikling på si. På denne nettsiden
             har jeg samlet litt av det jeg har skrevet om utdanningspolitikk, noen av webprosjektene

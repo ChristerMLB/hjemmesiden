@@ -13,23 +13,27 @@ const BlogCard = ({ post }: BlogCardProps) => {
    return (
       <div className="blogcard">
          <div className="blogcardheader">
+            <a href={`?post=${post.tittel}`}>
             <Image
                src={`/img/blogg/${post.hovedbilde_url}`}
                alt={post.hovedbilde_alttext}
-               width={1000}
-               height={500}
+               width={1200}
+               height={600}
             />
 
-            <a href={`?post=${post.tittel}`}>
-               <h3>{post.tittel}</h3>
-            </a>
-            
-            <aside>{dato.toLocaleDateString("nb-NO")}</aside>
-            <hr></hr>
+            <div className="blogcardheadertext">
+                  <h2>{post.tittel}</h2>
+
+               <time>{dato.toLocaleDateString("nb-NO")}</time>
+            </div>
+               </a>
          </div>
-         <div className="blogcardtext">{parse(post.ingress)}<a href={`?post=${post.tittel}`}>...les videre</a>
+         <div className="blogcardtext">
+            {parse(post.ingress)}
+            <p>
+               <a href={`?post=${post.tittel}`}>...les videre</a>
+            </p>
          </div>
-            
       </div>
    );
 };

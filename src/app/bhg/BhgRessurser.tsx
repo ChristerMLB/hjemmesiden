@@ -39,7 +39,7 @@ const BhgRessurser = () => {
     
     return (
       <div className="ressurslistewrapper">
-        <h2>Ressurser du kan laste ned</h2>
+        {/* <h2>Ressurser du kan laste ned</h2> */}
         <div className="barnehageressursliste">
            {ressursListe?.map((ressurs) => (
               <BarnehageRessursKort

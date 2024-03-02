@@ -69,7 +69,7 @@ const Blogg = ({ post, page }: HomeProps) => {
 
    return (
       <div className="blogwrapper">
-         <h1 className="mt-4">Barndomspolitikk</h1>
+         {/* <h1 className="mt-4">Barndomspolitikk</h1> */}
          {error && <ErrorComponent error={error} reset={() => location.reload()} />}
          {blogList && !post ? (
             blogList.map((post, i) =>
