@@ -18,6 +18,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
                alt={post.hovedbilde_alttext}
                width={1200}
                height={600}
+               blurDataURL="loading.gif"
                placeholder="blur"
             />
 

@@ -40,10 +40,6 @@ h1 {
 a {
    color: var(--secondary);
 }
-a:hover {
-   color: var(--bright) !important;
-   cursor: pointer;
-}
 h2 {
    font-weight: bold;
    font-size: 1.5rem;
@@ -51,6 +47,10 @@ h2 {
 h3 {
    font-weight: bold;
    font-size: 1.2rem;
+}
+a:hover {
+   color: var(--bright) !important;
+   cursor: pointer;
 }
 p {
    line-height: 1.55rem;
@@ -160,7 +160,7 @@ time {
    gap: 1px;
    flex-direction: row;
    overflow-x: scroll;
-   background-color: var(--lightTransparent);
+   /* background-color: var(--lightTransparent); */
    width: calc(100vw - (var(--gap) * 2));
 }
 .barnehageressurskort {
@@ -171,12 +171,18 @@ time {
    grid-auto-flow: column;
    gap: var(--gap);
    padding: var(--gap);
-   /* background-color: var(--lightTransparent); */
+   background-color: var(--lightTransparent);
 }
 .barnehageressurskort p {
    display: inline;
    color: black !important;
    font-weight: normal;
+}
+.ressurskorttittel {
+   color: var(--black);
+}
+.barnehageressurskort:hover .ressurskorttittel{
+   color: var(--bright);
 }
 
 /* Prosjektliste */
