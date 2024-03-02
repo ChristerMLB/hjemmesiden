@@ -1,7 +1,6 @@
 import { BloggPost } from "@/types/Blogg";
 import parse from "html-react-parser";
 import Image from "next/image";
-import { useEffect } from "react";
 
 type BlogCardProps = {
    post: BloggPost;
@@ -19,6 +18,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
                alt={post.hovedbilde_alttext}
                width={1200}
                height={600}
+               placeholder="blur"
             />
 
             <div className="blogcardheadertext">

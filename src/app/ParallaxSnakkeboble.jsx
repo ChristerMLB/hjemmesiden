@@ -5,7 +5,7 @@ export default function ParallaxSnakkeboble() {
       <div className="parallaxsnakkeboble" data-depth="0.2">
          <h1>Hei!</h1>
          <p>Dette er hjemmesiden til Christer M.L. Bendixen. Den er for tiden</p>
-         <h2 className="flex gap-2 items-center">
+         <h3 className="flex gap-2 items-center">
             <Image
                src="/img/construction.gif"
                alt="old-school under-construction gif"
@@ -14,7 +14,7 @@ export default function ParallaxSnakkeboble() {
                className="pixelatedImg"
             />
             <span>UNDER CONSTRUCTION</span>
-         </h2>
+         </h3>
          <div className="snakkebobletut"></div>
       </div>
    );
