@@ -43,10 +43,11 @@ a {
 h2 {
    font-weight: bold;
    font-size: 1.5rem;
+   line-height: 1.7rem;
 }
 h3 {
    font-weight: bold;
-   font-size: 1.2rem;
+   font-size: 1.1rem;
 }
 a:hover {
    color: var(--bright) !important;
@@ -141,7 +142,7 @@ time {
 .bhgommeg {
    background-color: var(--lightTransparent);
    padding: var(--gap);
-   min-width: 35ch;
+   min-width: 350px;
 }
 .bhgsidebarwrapper {
    display: flex;
@@ -479,12 +480,12 @@ time {
    display: grid;
    grid-template-columns: 1fr;
    gap: var(--gap);
-   background-color: var(--lightTransparent);
+   background-color: var(--white);
    backdrop-filter: blur(10px);
    padding: var(--gap);
    position: absolute;
    border-radius: var(--corners);
-   border: 1px white solid;
+   /* outline: 5px var(--lightTransparent) solid; */
    max-height: calc(95vh - var(--headerspace));
    overflow-y: scroll;
 }
@@ -499,7 +500,7 @@ label {
 .kontaktskjema input,
 .kontaktskjema textarea {
    border-radius: var(--corners);
-   border: 1px var(--black) solid;
+   background-color: var(--shadowOnWhite);
 }
 .dummyInput,
 .dummyTextarea {
@@ -606,6 +607,9 @@ footer {
    :root {
       --gap: 1em;
       --headerspace: 200px;
+   }
+   h2{
+      font-size: 1.8rem;
    }
    .parallaxsnakkeboble {
       width: 345px;

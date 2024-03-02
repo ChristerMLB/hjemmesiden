@@ -12,8 +12,7 @@ const BhgOmMeg = ({setKontaktModal, kontaktModal}:BhgOmMegTypes) => {
          <p>
             Hei, jeg er en barnehagelærer som også driver med webutvikling på si. På denne nettsiden
             har jeg samlet litt av det jeg har skrevet om utdanningspolitikk, noen av webprosjektene
-            mine, og noe av det jeg har laget av ressurser til barnehagebruk. Hvis det er noe du
-            lurer på, trykk på konvolutten for å ta kontakt:
+            mine, og noe av det jeg har laget av ressurser til barnehagebruk. Trykk gjerne på konvolutten for å ta kontakt:
             <KontaktKonvolutt setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
          </p>
          <p>MVH • Christer M.L. Bendixen</p>
