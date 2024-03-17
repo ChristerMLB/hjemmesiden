@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# hjemmesiden min!
 
-## Getting Started
+En enkel hjemmeside hvor jeg viser frem utviklerporteføljen min, og blogger om barndomspolitikk.
 
-First, run the development server:
+Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at forsiden bare skal være en visuelt leken side uten noe særlig innhold bortsett fra navigasjonen – på denne måten får jeg kommunisert denne strukturen tydelig til brukeren. Utfordringen er å gjøre forsiden relevant for begge målgruppene - og der tror jeg lekenhet og kreativitet er en viktig fellesnevner.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Responsivt design som funker på alle skjermstørrelser
+- Konktaktskjema som er sikret mot XSS, SQL-injections og bots
+- Masse bra innhold
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# To do:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Design
 
-## Learn More
+- En grundig gjennomgang av typografien
+- En gjennomgang av designet generelt sett for å gjøre det enklere og mer profesjonelt (og mer konsekvent)
+- Finn steder å legge inn små animasjoner, for å gjøre uttrykket mer lekent
+  - når jeg viser de gamle prosjektene
+- tooltip som dukker opp når man klikker på teknologiene
 
-To learn more about Next.js, take a look at the following resources:
+## Styling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Favikon
+- Stailing av ekstrabilder
+- gå gjennom feilmeldingene og sjekk om de kommer til bruker og er godt stailet
+- vis hvor jeg er i nav, deaktiver lenken og endre på stailingen
+- stail ferdig footeren
+- stail ferdig enkeltbloggpost
+- fiks konvolutten i nav på liten skjerm
+- stail linker som er h1-h3 så cssen blir mer elegant
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Innhold
 
-## Deploy on Vercel
+- Flere bloggposter, skriv om leserinnlegg jeg har hatt i BT og lignende
+- <time> med datetime= på bloggpostene
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Bedre logging av feil, kanskje de bare skal sendes på epost?
+- implementer goatcounter og skru av vercel sine analytics
+
+## På sikt
+
+- migrere til Supabase?
+- bedre redigering for bloggen, bruk useOptimistic
+- bedre redigering for web-prosjektene og barnehageressursene
+- blogg eller lignende på webutviklingssiden?
+- gjør flere av komponentene til servercomponents med async await, sånn at jeg kan fjerne den ekle linjen fra next.config
