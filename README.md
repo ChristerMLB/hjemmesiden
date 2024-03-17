@@ -34,7 +34,7 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 ### Innhold
 
 - Flere bloggposter, skriv om leserinnlegg jeg har hatt i BT og lignende
-- <time> med datetime= på bloggpostene
+- /<time> med datetime= på bloggpostene
 
 ### Backend
 
