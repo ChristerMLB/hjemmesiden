@@ -12,7 +12,7 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 
 # To do:
 
-## Design
+### Design
 
 - En grundig gjennomgang av typografien
 - En gjennomgang av designet generelt sett for å gjøre det enklere og mer profesjonelt (og mer konsekvent)
@@ -20,7 +20,7 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
   - når jeg viser de gamle prosjektene
 - tooltip som dukker opp når man klikker på teknologiene
 
-## Styling
+### Styling
 
 - Favikon
 - Stailing av ekstrabilder
@@ -31,17 +31,17 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 - fiks konvolutten i nav på liten skjerm
 - stail linker som er h1-h3 så cssen blir mer elegant
 
-## Innhold
+### Innhold
 
 - Flere bloggposter, skriv om leserinnlegg jeg har hatt i BT og lignende
 - <time> med datetime= på bloggpostene
 
-## Backend
+### Backend
 
 - Bedre logging av feil, kanskje de bare skal sendes på epost?
 - implementer goatcounter og skru av vercel sine analytics
 
-## På sikt
+### På sikt
 
 - migrere til Supabase?
 - bedre redigering for bloggen, bruk useOptimistic
