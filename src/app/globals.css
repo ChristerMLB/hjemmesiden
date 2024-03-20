@@ -366,12 +366,16 @@ time {
 /* forsiden med alle parallaxgreiene */
 
 #scene {
-   background-image: url(../../public/img/taageskog2.jpg);
+   /*background-image: url(../../public/img/taageskog2.jpg);*/
    background-size: cover;
    overflow: clip;
+   color: white;
+   line-height: .7rem;
+   width: 120vw;
+   margin-left: -10vw;
 }
 .parallaxBackgroundParticles {
-   background-image: url(../../public/img/Particles-Transparent-File.png);
+   /*background-image: url(../../public/img/Particles-Transparent-File.png);*/
    background-size: cover;
    margin-left: -5vw;
    margin-top: -5vh;
@@ -387,16 +391,18 @@ time {
    width: 140vw;
    height: 110vh;
 }
-.parallaxForgrunn2 {
+.parallaxForgrunn1 {
    background-size: cover;
    margin-left: -10%;
    margin-top: -10%;
    width: 120%;
    height: 130%;
-   background-blend-mode: screen;
+   /*opacity: .4;*/
+   font-size: 1.2rem;
+   letter-spacing: .6rem;
 }
 .parallaxForgrunn3 {
-   background-image: url(../../public/img/snow.png);
+   /*background-image: url(../../public/img/snow.png);*/
    background-size: cover;
    margin-left: -10%;
    margin-top: -10%;
@@ -404,7 +410,8 @@ time {
    height: 130%;
    background-blend-mode: screen;
    pointer-events: none;
-   opacity: 0.2;
+   font-size: 1.4rem;
+   letter-spacing: .7rem;
 }
 .parallaxFrontPageLinks {
    margin-left: calc(50% - (65px + 7.3em));
@@ -456,6 +463,7 @@ time {
    border-radius: 3em;
    background-color: var(--lightTransparent);
    padding: 1.5em;
+   display: none !important;
 }
 .snakkebobletut {
    width: 30px;
@@ -764,4 +772,11 @@ footer {
    .kontaktwrapper {
       margin: calc(var(--headerspace) + 5vh) var(--gap) 0 var(--gap);
    }
+   li .kontaktkonvolutt{
+	   padding-left: .8em !important;
+	   padding-right: 0 !important;
+   }
+.parallaxGooglyEyes {
+	display: none;
+}
 }
