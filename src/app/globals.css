@@ -28,6 +28,9 @@ html {
    background-size: cover;
    font-size: 1.1em;
 }
+h1, h2, h3{
+	color: black !important;
+}
 h1 {
    font-size: 2rem;
    font-weight: bold;
@@ -374,7 +377,7 @@ time {
    width: 120vw;
    margin-left: -10vw;
 }
-.parallaxBackgroundParticles {
+.parallaxBackgroundParticles{
    /*background-image: url(../../public/img/Particles-Transparent-File.png);*/
    background-size: cover;
    margin-left: -5vw;
