@@ -19,7 +19,7 @@ const Bhg = ({}: HomeProps) => {
 
    return (
       <>
-         <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         <MainNav currentPage='bhg' setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
          {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal}/> : null}
          <div className="wrapper bhg-wrapper">
             <ErrorBoundary errorComponent={ErrorComponent}>

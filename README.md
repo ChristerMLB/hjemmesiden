@@ -17,7 +17,6 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 
 - Favikon
 - Stailing av ekstrabilder
-- vis hvor jeg er i nav, deaktiver lenken og endre på stailingen
 - stail ferdig footeren
 - stail ferdig enkeltbloggpost
 - gå gjennom feilmeldingene og sjekk om de kommer til bruker og er godt stailet

@@ -353,6 +353,11 @@ time {
 #mainNavContent svg {
    margin-bottom: -0.5px;
 }
+.disabledlink{
+   cursor: default;
+   pointer-events: none;
+   opacity: .9;
+}
 #logoen {
    background-color: transparent;
    position: absolute;
