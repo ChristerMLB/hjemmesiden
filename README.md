@@ -17,7 +17,6 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 
 - Stailing av ekstrabilder
 - stail ferdig footeren
-- stail ferdig enkeltbloggpost
 - gå gjennom feilmeldingene og sjekk om de kommer til bruker og er godt stailet
 - finn et par stilige fonter og putt litt luft inn hvor behov
 

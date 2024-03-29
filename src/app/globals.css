@@ -773,8 +773,15 @@ footer {
 /* småskjerm */
 
 @media (max-width: 800px) {
+   html{
+      background-image: none;
+      background-color:white;
+   }
    .enkeltressurs {
       grid-template-columns: auto;
+   }
+   .blogwrapper{
+      background-color: unset;
    }
    .kontaktwrapper {
       margin: calc(var(--headerspace) + 5vh) var(--gap) 0 var(--gap);
