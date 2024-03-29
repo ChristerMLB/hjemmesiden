@@ -3,24 +3,30 @@
 import { useEffect, useState } from "react";
 import BarnehageRessursKort from "./BarnehageRessursKort";
 import { RessursKort } from "@/types/Ressurser";
+import ErrorComponent from "@/components/ErrorComponent";
 
 const BhgRessurser = () => {
    const [ressursListe, setRessursListe] = useState<RessursKort[] | null>(null);
+   const [error, setError] = useState<Error|null>(null);
 
    useEffect(() => {
       async function fetchRessurser() {
          try {
+            // throw new Error('testing!');
             const fetchedRessurser = await fetch("api/ressursliste").then((response) =>
                response.json()
             );
             setRessursListe(fetchedRessurser);
          } catch (e) {
-            throw new Error(`Databasefeil: klarte ikke finne barnehageressursene: ${e}`);
+            setError(Error(`Databasefeil: klarte ikke finne barnehageressursene: ${e}`));
          }
       }
       fetchRessurser();
    }, []);
 
+      if(error){
+         return <ErrorComponent error={error} reset={() => location.reload()} />;
+      } 
    if (!ressursListe) {
       return (
 <div className="ressurslistewrapper">

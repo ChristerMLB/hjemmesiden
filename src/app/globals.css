@@ -582,6 +582,16 @@ footer {
 .footerseksjon img {
    margin-bottom: calc(0px - var(--gap));
 }
+/* Error component */
+.errorcomponent{
+   background-color: #ff000022;
+   border: #ff000033 var(--gap) solid;
+   display: grid;
+   gap: var(--gap);
+   align-content: center;
+   padding: var(--gap);
+}
+
 
 @-webkit-keyframes AnimationName {
    0% {

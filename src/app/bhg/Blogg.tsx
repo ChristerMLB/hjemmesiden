@@ -58,7 +58,7 @@ const Blogg = ({ post, page }: HomeProps) => {
             } catch (e) {
                setError(
                   Error(
-                     `Fant ikke bloggposten, er adressen kanskje stavet feil? Nei ikke vet jeg, men det er ikke så mange bloggposter, så du kan sikkert finne den du leter etter hvis du blar deg frem <a href="/bhg">her</a>.<br>${e}`
+                     `Fant ikke bloggposten, er adressen kanskje stavet feil? Nei ikke vet jeg, men det er ikke så mange bloggposter, så du kan sikkert finne den du leter etter hvis du blar deg frem <a href="/bhg">her</a>.</p><p>${e}</p>`
                   )
                );
             }

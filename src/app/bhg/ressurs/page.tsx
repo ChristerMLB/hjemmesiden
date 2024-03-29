@@ -8,6 +8,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { faDownload, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ErrorComponent from "@/components/ErrorComponent";
 
 type HomeProps = {};
 
@@ -15,9 +16,11 @@ const Bhg = ({}: HomeProps) => {
    const ressursId: number = parseInt(useSearchParams()?.get("id") as string);
    const [ressurs, setRessurs] = useState<EnkeltRessurs | null>(null);
    const [kontaktModal, setKontaktModal] = useState<boolean>(false);
+   const [error, setError] = useState<Error | null>(null);
    useEffect(() => {
       async function getRessurs() {
          try {
+            // throw new Error("TESTING!");
             const ressursListe = await fetch("/api/ressursliste").then((response) =>
                response.json()
             );
@@ -44,7 +47,7 @@ const Bhg = ({}: HomeProps) => {
             };
             setRessurs(ressursObjekt);
          } catch (e) {
-            throw new Error(`Fant ikke ressursen: ${e}`);
+            setError(Error(`Fant ikke ressursen: ${e}`));
          }
       }
       getRessurs();
@@ -52,10 +55,15 @@ const Bhg = ({}: HomeProps) => {
 
    return (
       <>
-         <MainNav currentPage={ressurs ? ressurs.tittel : null} setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         <MainNav
+            currentPage={ressurs ? ressurs.tittel : null}
+            setKontaktModal={setKontaktModal}
+            kontaktModal={kontaktModal}
+         />
          {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
          <div className="wrapper">
             <div className="enkeltressurs">
+               {error ? <ErrorComponent error={error} reset={() => location.reload()} /> : <>
                <div className="enkeltressursheader">
                   <Image
                      src={`/img/bhgressurser/${ressurs?.hovedbilde_url}`}
@@ -88,6 +96,7 @@ const Bhg = ({}: HomeProps) => {
                      </a>
                   </div>
                </div>
+               </>}
             </div>
          </div>
       </>

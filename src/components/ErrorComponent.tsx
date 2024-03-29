@@ -4,9 +4,9 @@ import { ReactNode } from "react";
 
 export default function ErrorComponent({error, reset}: {error: Error; reset: ()=>void;}){
    return(
-      <div className="w-full p-5 bg-white">
+      <div className="errorcomponent">
          <h2>Det har skjedd noe feil!</h2>
-         <p>{error.message}</p>
+         <p dangerouslySetInnerHTML={{__html: error.message}}></p>
       </div>
    )
 }
