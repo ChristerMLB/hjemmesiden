@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <>
-      <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+      <MainNav currentPage='home' setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
       {kontaktModal ? (
         <Kontaktskjema setKontaktModal={setKontaktModal} />
       ) : null}
