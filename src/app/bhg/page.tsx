@@ -9,6 +9,7 @@ import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import ErrorComponent from "@/components/ErrorComponent";
 import { useState } from "react";
 import Kontaktskjema from "../kontakt/Kontaktskjema";
+import Footer from "@/components/Footer";
 
 type HomeProps = {};
 
@@ -29,9 +30,9 @@ const Bhg = ({}: HomeProps) => {
                <ErrorBoundary errorComponent={ErrorComponent}>
                   <BhgRessurser />
                </ErrorBoundary>
-               <BhgOmMeg setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
             </div>
          </div>
+         <Footer setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
       </>
    );
 };

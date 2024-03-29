@@ -40,11 +40,11 @@ h1 {
 a {
    color: var(--secondary);
 }
-a h2{
-	color: var(--black);
+a h2 {
+   color: var(--black);
 }
-a:hover{
-	color: var(--bright) !important;
+a:hover {
+   color: var(--bright) !important;
 }
 h2 {
    font-weight: bold;
@@ -184,7 +184,7 @@ time {
 .ressurskorttittel {
    color: var(--black);
 }
-.barnehageressurskort:hover .ressurskorttittel{
+.barnehageressurskort:hover .ressurskorttittel {
    color: var(--bright);
 }
 
@@ -353,10 +353,10 @@ time {
 #mainNavContent svg {
    margin-bottom: -0.5px;
 }
-.disabledlink{
+.disabledlink {
    cursor: default;
    pointer-events: none;
-   opacity: .9;
+   opacity: 0.9;
 }
 #logoen {
    background-color: transparent;
@@ -377,11 +377,11 @@ time {
    background-size: cover;
    overflow: clip;
    color: white;
-   line-height: .7rem;
+   line-height: 0.7rem;
    width: 120vw;
    margin-left: -10vw;
 }
-.parallaxBackgroundParticles{
+.parallaxBackgroundParticles {
    /*background-image: url(../../public/img/Particles-Transparent-File.png);*/
    background-size: cover;
    margin-left: -5vw;
@@ -406,7 +406,7 @@ time {
    height: 130%;
    /*opacity: .4;*/
    font-size: 1.2rem;
-   letter-spacing: .6rem;
+   letter-spacing: 0.6rem;
 }
 .parallaxForgrunn3 {
    /*background-image: url(../../public/img/snow.png);*/
@@ -418,7 +418,7 @@ time {
    background-blend-mode: screen;
    pointer-events: none;
    font-size: 1.4rem;
-   letter-spacing: .7rem;
+   letter-spacing: 0.7rem;
 }
 .parallaxFrontPageLinks {
    margin-left: calc(50% - (65px + 7.3em));
@@ -566,11 +566,12 @@ label {
 }
 /* footer */
 footer {
-   padding: 4em;
-   background-color: var(--shadowOnTransparent);
+   padding: calc(var(--gap)*2);
+   background-color: var(--black);
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: 1fr auto;
    gap: var(--gap);
+   margin-top: var(--gap);
 }
 .footerseksjon {
    background-color: var(--lightTransparent);
@@ -580,10 +581,26 @@ footer {
    place-items: end;
 }
 .footerseksjon img {
-   margin-bottom: calc(0px - var(--gap));
+   display: none;
+}
+.socials {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   gap: var(--gap);
+   place-self: start;
+}
+.socials li a {
+   display: flex;
+   padding: var(--gap);
+   gap: var(--gap);
+   /* justify-content: space-between; */
+   align-items: center;
+   border-radius: var(--corners);
+   background-color: var(--black);
 }
 /* Error component */
-.errorcomponent{
+.errorcomponent {
    background-color: #ff000022;
    border: #ff000033 var(--gap) solid;
    display: grid;
@@ -591,7 +608,6 @@ footer {
    align-content: center;
    padding: var(--gap);
 }
-
 
 @-webkit-keyframes AnimationName {
    0% {
@@ -633,7 +649,7 @@ footer {
       --gap: 1em;
       --headerspace: 200px;
    }
-   h2{
+   h2 {
       font-size: 1.8rem;
    }
    .parallaxsnakkeboble {
@@ -778,29 +794,76 @@ footer {
    .hideonbigscreen {
       display: none;
    }
+   footer {
+      padding: 4em;
+      background-color: var(--black);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--gap);
+   }
+   .footerseksjon {
+      background-color: var(--lightTransparent);
+      padding: var(--gap);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      place-items: end;
+   }
+   .footerseksjon img {
+      display: block;
+      margin-bottom: calc(0px - var(--gap));
+   }
+   .socials {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: var(--gap);
+   }
+   .socials li a {
+      display: flex;
+      padding: var(--gap);
+      gap: var(--gap);
+      /* justify-content: space-between; */
+      align-items: center;
+      border-radius: var(--corners);
+      background-color: var(--black);
+   }
 }
 
 /* småskjerm */
 
 @media (max-width: 800px) {
-   html{
+   html {
       background-image: none;
-      background-color:white;
+      background-color: white;
    }
    .enkeltressurs {
       grid-template-columns: auto;
    }
-   .blogwrapper{
+   .blogwrapper {
       background-color: unset;
    }
    .kontaktwrapper {
       margin: calc(var(--headerspace) + 5vh) var(--gap) 0 var(--gap);
    }
-   li .kontaktkonvolutt{
-	   padding-left: .8em !important;
-	   padding-right: 0 !important;
+   li .kontaktkonvolutt {
+      padding-left: 0.8em !important;
+      padding-right: 0 !important;
    }
-.parallaxGooglyEyes {
-	display: none;
+   .parallaxGooglyEyes {
+      display: none;
+   }
 }
+@media (max-width: 500px){
+   footer{
+      display: flex;
+      flex-wrap: wrap;
+   }
+   .socials{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+   }
+   .socials li{
+      flex-grow: 1;
+   }
 }

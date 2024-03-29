@@ -16,8 +16,6 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 ### Styling
 
 - Stailing av ekstrabilder
-- stail ferdig footeren
-- gå gjennom feilmeldingene og sjekk om de kommer til bruker og er godt stailet
 - finn et par stilige fonter og putt litt luft inn hvor behov
 
 ### Innhold

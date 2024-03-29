@@ -9,6 +9,7 @@ import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import ErrorComponent from "@/components/ErrorComponent";
 import WebListe from "./WebListe";
 import Kontaktskjema from "../kontakt/Kontaktskjema";
+import Footer from "@/components/Footer";
 //import Footer from "@/components/Footer";
 
 type WebProps = {};
@@ -51,6 +52,7 @@ const Web = ({}: WebProps) => {
                </ErrorBoundary>
             </div>
          </div>
+         <Footer setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
       </>
    ) : (
       <>
@@ -67,7 +69,7 @@ const Web = ({}: WebProps) => {
                )}
             </div>
          </div>
-         {/* <Footer /> */}
+         <Footer setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
       </>
    );
 };
