@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { faDownload, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ErrorComponent from "@/components/ErrorComponent";
+import Footer from "@/components/Footer";
 
 type HomeProps = {};
 
@@ -99,6 +100,7 @@ const Bhg = ({}: HomeProps) => {
                </>}
             </div>
          </div>
+         <Footer setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
       </>
    );
 };
