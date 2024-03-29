@@ -15,7 +15,6 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 
 ### Styling
 
-- Favikon
 - Stailing av ekstrabilder
 - stail ferdig footeren
 - stail ferdig enkeltbloggpost
