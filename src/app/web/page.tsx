@@ -42,7 +42,7 @@ const Web = ({}: WebProps) => {
 
    return currentProject ? (
       <>
-         <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         <MainNav currentPage={currentProject ? currentProject.navn : null} setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
          {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
          <div className="wrapper">
             <div className="enkeltProsjektWrapper">

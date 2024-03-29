@@ -42,7 +42,6 @@ const Bhg = ({}: HomeProps) => {
                betalingsforslag: restenressurs[0].betalingsforslag,
                ekstraBilder: null,
             };
-            console.log("ressursobjekt:", ressursObjekt);
             setRessurs(ressursObjekt);
          } catch (e) {
             throw new Error(`Fant ikke ressursen: ${e}`);
@@ -53,7 +52,7 @@ const Bhg = ({}: HomeProps) => {
 
    return (
       <>
-         <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         <MainNav currentPage={ressurs ? ressurs.tittel : null} setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
          {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
          <div className="wrapper">
             <div className="enkeltressurs">

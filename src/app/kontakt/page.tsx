@@ -9,7 +9,7 @@ const Kontakt = () => {
    const [kontaktModal, setKontaktModal] = useState<boolean>(false);
    return (
       <>
-         <MainNav setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
+         <MainNav currentPage='kontakt' setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
          <div className="wrapper">
             <ToppOverskrift tekst="Kontakt Christer" />
             <Kontaktskjema setKontaktModal={setKontaktModal} />
