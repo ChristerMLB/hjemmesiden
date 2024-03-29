@@ -14,11 +14,11 @@ export const MainNav = ({setKontaktModal, kontaktModal, currentPage}: Props) => 
                <ul>
                   <li>☙</li>
                   <li>
-                     <a href="/bhg" className={currentPage == "bhg" ? 'disabledlink' : null} >barnehagegreier</a>
+                     <a href="/bhg" className={currentPage == "bhg" ? 'disabledlink' : ''} >barnehagegreier</a>
                   </li>
                   <li>•</li>
                   <li>
-                     <a href="/web" className={currentPage == "web" ? 'disabledlink' : null} >webutvikling</a>
+                     <a href="/web" className={currentPage == "web" ? 'disabledlink' : ''} >webutvikling</a>
                   </li>
                   <li className="hideonbigscreen">•</li>
                   <li className="mirror-x hideonsmallscreen">☙</li>
