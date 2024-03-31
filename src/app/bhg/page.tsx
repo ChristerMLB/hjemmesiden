@@ -4,7 +4,6 @@ import MainNav from "@/components/MainNav";
 import Blogg from "./Blogg";
 import BhgRessurser from "./BhgRessurser";
 import { useSearchParams } from "next/navigation";
-import BhgOmMeg from "./BhgOmMeg";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import ErrorComponent from "@/components/ErrorComponent";
 import { useState } from "react";
@@ -20,6 +19,7 @@ const Bhg = ({}: HomeProps) => {
 
    return (
       <>
+
          <MainNav currentPage='bhg' setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
          {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal}/> : null}
          <div className="wrapper bhg-wrapper">

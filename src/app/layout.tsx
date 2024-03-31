@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins, Vollkorn, Fjalla_One, Cantarell, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({ subsets: ["latin"] });
+const text = Montserrat({ subsets: ["latin"], weight: ['500'] });
+const headers = Montserrat({ subsets: ["latin"], weight: '700' });
 
 export const metadata: Metadata = {
    title: "Christer M.L. Bendixen sin hjemmeside | Fortelle.no",
@@ -13,7 +14,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
    return (
       <html lang="no">
-         <body className={inter.className}>
+         <body className={text.className}>
+            <style>{`:root{
+               --headers: ${headers.style.fontFamily}
+            }`}</style>
             {children}
             <Analytics />
          </body>
