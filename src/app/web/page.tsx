@@ -58,7 +58,7 @@ const Web = ({}: WebProps) => {
       <>
          <MainNav currentPage='web' setKontaktModal={setKontaktModal} kontaktModal={kontaktModal} />
          {kontaktModal ? <Kontaktskjema setKontaktModal={setKontaktModal} /> : null}
-         <div className="wrapper">
+         <div className="webwrapper">
             <div className="prosjektListeWrapper">
                {error ? (
                   <ErrorComponent error={error} reset={() => location.reload()} />

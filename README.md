@@ -24,7 +24,7 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 
 ### Backend
 
-- Bedre logging av feil, kanskje de bare skal sendes på epost?
+- Bedre logging av feil, kanskje de bare skal sendes på epost? ja, i alle fall de viktigste!
 - implementer goatcounter og skru av vercel sine analytics
 
 ### Design
@@ -43,4 +43,3 @@ grundig jobb i figma?
 - bedre redigering for web-prosjektene og barnehageressursene
 - blogg eller lignende på webutviklingssiden?
 - gjør flere av komponentene til servercomponents med async await, sånn at jeg kan fjerne den ekle linjen fra next.config
-
