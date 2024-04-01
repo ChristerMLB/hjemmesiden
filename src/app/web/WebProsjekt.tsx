@@ -12,6 +12,7 @@ type WebProjectProps = {
 const WebProsjekt = ({ prosjekt }: WebProjectProps) => {
    return (
       <div className="webProsjekt">
+
          <div className="prosjektBeskrivelseWrapper enkeltProsjektBeskrivelseWrapper">
             <div className="spacer"></div>
             <div className="prosjektBeskrivelse">
@@ -72,7 +73,7 @@ const WebProsjekt = ({ prosjekt }: WebProjectProps) => {
             </div>
          </div>
 
-         <div className="prosjektImg overflow-y-scroll">
+         <div className="prosjektImg prosjektImgH enkeltprosjektimg overflow-y-scrolla">
             {prosjekt?.url && prosjekt?.mobilvisning ? (
                <>
                   <iframe
