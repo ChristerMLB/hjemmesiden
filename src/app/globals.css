@@ -820,6 +820,7 @@ footer {
       border: #222 solid 0.5em;
       border-radius: 1em;
       transform: rotate(2deg);
+      overflow-x: hidden;
    }
    .hideonsmallscreen {
       display: unset;

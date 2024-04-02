@@ -7,7 +7,7 @@ const nextConfig = {
             headers: [
                {
                   key: "Content-Security-Policy",
-                  value: "default-src 'self' kommunetisk.no http://kommunetisk.no old.fortelle.no fortelle.no hjemmesiden.vercel.app conorganizer-portfoliofork-gmbv.vercel.app cardplank.web.app fonts.googleapis.com va.vercel-scripts.com vitals.vercel-insights.com  'unsafe-eval' 'unsafe-inline'; ",
+                  value: "default-src 'self' kommunetisk.no http://kommunetisk.no old.fortelle.no https://old.fortelle.no/ fortelle.no hjemmesiden.vercel.app conorganizer-portfoliofork-gmbv.vercel.app cardplank.web.app fonts.googleapis.com va.vercel-scripts.com vitals.vercel-insights.com  'unsafe-eval' 'unsafe-inline'; ",
                },
                {
                   key: "X-Frame-Options",
