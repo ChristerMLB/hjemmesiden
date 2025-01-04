@@ -33,7 +33,7 @@ Nettsiden har to ulike seksjoner, med to ganske ulike målgrupper. Tanken er at 
 ### På sikt
 
 - migrere til Supabase?
-- bedre redigering for bloggen, bruk useOptimistic
+- bedre redigering for bloggen, bruk useOptimistic.
 - bedre redigering for web-prosjektene og barnehageressursene
 - blogg eller lignende på webutviklingssiden?
 - gjør flere av komponentene til servercomponents med async await, sånn at jeg kan fjerne den ekle linjen fra next.config
