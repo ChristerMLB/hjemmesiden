@@ -38,3 +38,4 @@ const Bhg = ({}: HomeProps) => {
 };
 
 export default Bhg;
+
